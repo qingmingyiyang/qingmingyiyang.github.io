@@ -1,10 +1,10 @@
 # 熊帝权的个人主页
 
-朴素的静态个人网站：暖白底色、深灰文字、少量绿色。无构建工具、无第三方字体或统计脚本，项目内容通过原生 details 展开，关闭 JavaScript 也可使用主页。
+面向面试阅读的静态作品主页：暖白与深绿色、可切换角色的规则讲解、项目机制图、工具试用和研究成果。无构建工具、无第三方字体或统计脚本。角色示例为虚构场景，图示为设计讲解，未接入模型或真实题库。关闭 JavaScript 后仍可阅读完整案例。
 
 ## 本地查看与修改
 
-直接打开 `index.html`。正文在 `index.html` 中，配色和排版在 `style.css` 中。文件修改后刷新页面即可。
+直接打开 `index.html`。正文在 `index.html` 中，主页排版在 `showcase.css` 中，角色交互在 `showcase.js` 中。`style.css` 继续供博客和上下文卡片工具使用。文件修改后刷新页面即可。
 
 ## 发布到 GitHub Pages
 
@@ -23,4 +23,5 @@
 
 主页：https://qingmingyiyang.github.io/
 仓库：https://github.com/qingmingyiyang/qingmingyiyang.github.io
+
 
