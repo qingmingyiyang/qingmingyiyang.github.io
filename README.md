@@ -4,7 +4,7 @@
 
 ## 本地查看与修改
 
-直接打开 `index.html`。正文在 `index.html` 中，主页排版在 `showcase.css` 中，角色交互在 `showcase.js` 中。`style.css` 继续供博客和上下文卡片工具使用。文件修改后刷新页面即可。
+使用静态 HTTP 服务打开 `index.html`，以便正确预览内嵌相册及其浏览器存储。正文在 `index.html` 中，主页排版在 `showcase.css` 中，角色交互及嵌入高度处理在 `showcase.js` 中。`style.css` 继续供博客和上下文卡片工具使用。文件修改后刷新页面即可。
 
 ## 发布到 GitHub Pages
 
@@ -23,5 +23,11 @@
 
 主页：https://qingmingyiyang.github.io/
 仓库：https://github.com/qingmingyiyang/qingmingyiyang.github.io
+
+## 见见面公开体验版
+
+2026-09-11从用户提供的原 Web 原型整理出 `tools/meeting-memories/`：暖色相册界面、日期跳转、照片与视频、文字与地点、本地保存、JSON 备份及确认导入。首页 iframe 只浏览虚构示例，完整页面提供个人记录功能。三幅 SVG 为此次制作的示例插画。未接入模型，不读取旧版存储，不兼容旧版 ZIP；原工具及私人资料未发布。
+
+主页文字同步调整为更自然的第一人称叙述；已有研究数字、AI 实现分工与原型验证边界保持原口径。
 
 
