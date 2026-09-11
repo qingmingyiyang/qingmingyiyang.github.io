@@ -22,3 +22,34 @@ window.addEventListener('message', event => {
  const height = event.data.height;
  if (Number.isFinite(height) && height >= 300 && height <= 1600) meetingFrame.style.height = `${Math.ceil(height)}px`;
 });
+
+// Original-image links remain usable when JavaScript or <dialog> is unavailable.
+const screenshotDialog = document.getElementById('screenshot-dialog');
+if (screenshotDialog && typeof screenshotDialog.showModal === 'function') {
+ const image = document.getElementById('screenshot-dialog-image');
+ const title = document.getElementById('screenshot-dialog-title');
+ const caption = document.getElementById('screenshot-dialog-caption');
+ const original = document.getElementById('screenshot-original');
+ let opener;
+ document.querySelectorAll('[data-screenshot]').forEach(link => {
+  link.addEventListener('click', event => {
+   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+   event.preventDefault();
+   opener = link;
+   image.src = link.href;
+   image.alt = link.querySelector('img').alt;
+   title.textContent = link.dataset.title;
+   caption.textContent = link.dataset.caption;
+   original.href = link.href;
+   screenshotDialog.showModal();
+  });
+ });
+ screenshotDialog.querySelector('.screenshot-close').addEventListener('click', () => screenshotDialog.close());
+ screenshotDialog.addEventListener('click', event => {
+  if (event.target !== screenshotDialog) return;
+  const box = screenshotDialog.getBoundingClientRect();
+  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) screenshotDialog.close();
+ });
+ screenshotDialog.addEventListener('close', () => { if (opener?.isConnected) opener.focus({preventScroll:true}); });
+}
+
