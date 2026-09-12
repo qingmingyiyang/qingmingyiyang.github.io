@@ -15,21 +15,3 @@
 @media print{.site-header,.skip,.reading-progress,.live-album,dialog{display:none!important}body{font-size:12px}*{print-color-adjust:exact}.hero,.chapter,.journey-section,.method-section,.writing-section,.about-section{padding:30px}.hero h1{font-size:60px}.hero-image{transform:none;box-shadow:none}.journey-heading{position:static}.module-list details>p{display:block}.screenshot-card{break-inside:avoid}}
 
 .hero-meta{font-size:11px;color:#7b896b;margin-top:17px}.hero-composition{margin-top:36px}@media(max-width:760px){.hero-meta{font-size:10px;line-height:1.9;max-width:300px}.hero-composition{margin-top:30px}}
-
-/* Personal AI Native perspective: experience, context, entrusted action. */
-.native-section{padding:85px var(--pad) 75px;display:grid;grid-template-columns:1fr 1fr;gap:35px 8%;background:#f0efe6;border-bottom:1px solid var(--line)}
-.native-heading h2{font-size:clamp(32px,3.2vw,45px);line-height:1.6;letter-spacing:-.035em;margin:22px 0 24px}
-.native-heading>p:not(.eyebrow){font-size:15px;line-height:1.95;color:var(--muted);max-width:490px;margin:0 0 17px}
-.native-heading .text-link{display:inline-block;margin-top:14px}
-.native-observations{list-style:none;margin:0;padding:0}
-.native-observations li{padding:24px 0;border-top:1px solid #cdd0bf}
-.native-observations li:first-child{padding-top:4px;border-top:0}
-.native-observations li>span{font:11px/1.8 var(--mono);color:#7e896b}
-.native-observations h3{font-size:21px;line-height:1.65;margin:9px 0 12px}
-.native-observations p{font-size:14px;line-height:1.95;color:var(--muted)}
-.native-values{grid-column:1/-1;display:grid;grid-template-columns:155px 1fr;gap:35px;padding:25px 30px;background:#e2e7d4;border-left:3px solid #8b9b6c}
-.native-values>span{font-size:12px;line-height:1.9;color:#6b7958}
-.native-values p{font-size:16px;line-height:1.9;max-width:900px}
-.native-values strong{font-weight:600;color:var(--ink)}
-.journey-timeline a.native-entry{margin-left:22px}
-@media(max-width:760px){.native-section{padding:55px var(--pad);display:block}.native-heading h2{font-size:30px;line-height:1.55;margin:15px 0 21px}.native-heading>p:not(.eyebrow){font-size:14px}.native-heading .text-link{font-size:12px}.native-observations{margin-top:33px}.native-observations li{padding:22px 0}.native-observations h3{font-size:18px}.native-observations p{font-size:13px}.native-values{display:block;margin-top:10px;padding:20px}.native-values>span{display:block;font-size:10px;margin-bottom:12px}.native-values>span br{display:none}.native-values p{font-size:13px}.journey-timeline a.native-entry{display:block;margin-left:0;width:fit-content}}
