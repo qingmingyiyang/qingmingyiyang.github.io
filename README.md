@@ -50,3 +50,7 @@
 字体IBM Plex Mono由Google Fonts官方仓库提供，以SIL OFL分发，版权与许可见assets/fonts/OFL-IBMPlexMono.txt。原始来源：https://github.com/google/fonts/tree/main/ofl/ibmplexmono 。字体本地托管，页面不向字体服务发送请求。
 
 新文章：blog/building-my-ai-path.html及Markdown，依据本人确认素材、AI协助成文。404.html提供返回首页入口。
+
+## AI Native个人思考（2026-09-12）
+
+首页#ai-native与历程文章同步补充本人观点：代码协作与文字写作的使用差异、发现盲点与个人成长、上下文组织、Agent受托代行，以及技术进入生活时对人的温度、价值、尊严和审美的关注。相关内容为本人的使用观察与产品期待，不作为行业比较结论或新增实现成果。个人观点区采用静态双栏与手机单列，复用既有页面样式，无新增脚本或模型调用。
