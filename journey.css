@@ -15,3 +15,9 @@
 @media print{.site-header,.skip,.reading-progress,.live-album,dialog{display:none!important}body{font-size:12px}*{print-color-adjust:exact}.hero,.chapter,.journey-section,.method-section,.writing-section,.about-section{padding:30px}.hero h1{font-size:60px}.hero-image{transform:none;box-shadow:none}.journey-heading{position:static}.module-list details>p{display:block}.screenshot-card{break-inside:avoid}}
 
 .hero-meta{font-size:11px;color:#7b896b;margin-top:17px}.hero-composition{margin-top:36px}@media(max-width:760px){.hero-meta{font-size:10px;line-height:1.9;max-width:300px}.hero-composition{margin-top:30px}}
+
+/* Actual research decisions: readable evidence at both viewport sizes. */
+.research-cases .scene-panels dd{font-size:17px;line-height:1.9}.research-cases .scene-panels dt{margin-bottom:7px}.research-cases .scene-panels dl>div{padding-bottom:17px}.research-cases .text-link{margin-top:0}.research-cases .scene-number{line-height:1.7;display:block}
+@media(max-width:700px){.research-cases .scene-panels dd{font-size:14px}.research-cases .translation-title{margin-bottom:25px}.research-cases .text-link{font-size:12px}.research-cases .scene-number{font-size:10px}}
+
+@media(max-width:700px){.hero h1{font-size:clamp(42px,11.5vw,70px)}}
