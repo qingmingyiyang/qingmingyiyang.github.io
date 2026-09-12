@@ -15,7 +15,7 @@
 
 后续修改上述文件并提交即可更新网站。发布设置参考 [GitHub 官方文档](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
-网站包含职业简介、3篇实践文章和上下文卡片小工具。工具代码的 MIT 许可仅覆盖工具范围，文章和个人经历文字保留作者权利。博客 HTML 是展示版，同名 Markdown 便于再编辑；修改时请同步两个版本。
+网站包含三条产品实践主线、4篇实践文章、上下文卡片小工具和见见面公开体验版。工具代码的 MIT 许可仅覆盖工具范围，文章和个人经历文字保留作者权利。博客 HTML 是展示版，同名 Markdown 便于再编辑；修改时请同步两个版本。
 
 网站仅包含公开职业简介和个人项目概述。详细履历库、电话、私人资料、题库、业务数据和本地工作文件不属于此仓库内容。
 
@@ -39,3 +39,14 @@
 ## 见见面界面截图
 
 首页见见面案例加入日历回看、当天回忆和影像放大3张实际浏览器截图，来自本仓库公开体验版。图中回忆虚构、配图为示例插画。截图未改绘，复用统一图片查看对话框；在线日历仍可直接体验。图片位于`assets/projects/meeting-*.png`，更新功能后按需重新截图。
+
+
+## 三条AI产品实践主线（2026-09-12）
+
+首页以业务AI、个人Agent探索、研究到产品三章展开，补充2024—2026历程、模块式案例及实践长文。章节背景描述用户任务，具体模块承载本人设计、AI/规则/人工分工、成果与范围取舍。产业研究作为洞察来源，未改称AI研究。
+
+首页使用journey.css与journey.js；showcase.js复用原角色讲解与截图对话框，原showcase.css保留为旧版样式。博客与两个工具继续沿用各自样式。6张项目截图保持原内容，3组讲解控件分别为角色、工作台范围、消费场景。演示与后续计划均有明确标签；无真实模型调用和新增效果指标。
+
+字体IBM Plex Mono由Google Fonts官方仓库提供，以SIL OFL分发，版权与许可见assets/fonts/OFL-IBMPlexMono.txt。原始来源：https://github.com/google/fonts/tree/main/ofl/ibmplexmono 。字体本地托管，页面不向字体服务发送请求。
+
+新文章：blog/building-my-ai-path.html及Markdown，依据本人确认素材、AI协助成文。404.html提供返回首页入口。
