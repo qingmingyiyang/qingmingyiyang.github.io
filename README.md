@@ -18,7 +18,7 @@
 
 ## 样式与交互
 
-`portfolio.css`提供公共布局；首页单独加载`home-reference.css`，详情与文章沿用`notebook.css`，因此旧首页的绿色面板样式不会叠加到新布局。`portfolio.js`负责导航、截图切换和旧链接兼容；`showcase.js`复用角色演示、原图对话框和相册嵌入高度同步。旧`journey.css`、`journey.js`和`showcase.css`保留为历史样式文件，当前主页及新详情页不加载。
+`portfolio.css`提供公共布局，`home-reference.css`只负责首页构图，所有公开HTML页面最后加载`site-theme.css`。统一样式负责字体、配色、导航、按钮、内容卡片和工具视觉；文章与上下文工具使用相同站点页头页脚，见见面保留操作布局及日夜模式。`portfolio.js`负责导航、截图切换和旧链接兼容；`showcase.js`复用角色演示、原图对话框和相册嵌入高度同步。旧`notebook.css`、`journey.css`、`journey.js`和`showcase.css`保留为历史文件，当前页面不再加载这些旧主题。
 
 博客和工具继续使用已有样式。无需构建依赖，使用静态 HTTP 服务即可预览；没有统计脚本或外部字体请求。主页卡片使用普通链接，截图缩略图在关闭 JavaScript 时仍可打开原图；角色演示和截图切换需要 JavaScript。
 
