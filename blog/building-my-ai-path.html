@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="从产业调研到 AI 产品实践。熊帝权的个人项目记录。" name="description"/>
+<title>从产业调研到 AI 产品实践 · 熊帝权</title>
+<link href="../style.css" rel="stylesheet"/>
+<link href="../favicon.svg" rel="icon"/>
+<style>
+    .post{max-width:740px;padding-block:45px 65px}.post h1{font-size:clamp(27px,4vw,38px);line-height:1.6}.post h2{font-size:20px;margin:35px 0 15px}.post p{line-height:2;color:#4e574f}.post .meta{font-size:12px;color:#646b65}.post a{overflow-wrap:anywhere}.post-end{margin-top:40px;border-top:1px solid #dedfd7;padding-top:24px;font-size:14px}
+  </style>
+<link href="../portfolio.css" rel="stylesheet"/><link href="../site-theme.css?v=20260913-warm" rel="stylesheet"/></head>
+<body class="site-page article-page" id="top">
+<header class="site-header"><div class="wrap header-inner"><a aria-label="熊帝权的个人主页" class="identity" href="../index.html#top"><span aria-hidden="true" class="identity-mark">d.</span><span>熊帝权</span><small>DIQUAN XIONG</small></a><div class="header-links"><nav aria-label="主导航"><a href="../index.html#works">作品</a><a href="../index.html#experience">经历</a></nav><a aria-label="熊帝权的 GitHub" class="github-link" href="https://github.com/qingmingyiyang">GitHub ↗</a></div></div></header>
+<main class="wrap post">
+<p class="eyebrow">项目记录 · AI 产品与个人应用</p>
+<h1>从产业调研到 AI 产品实践</h1>
+<p class="meta">2026-09-12 修订 · 熊帝权 · 根据个人经历整理，AI 协助成文</p>
+<p>我花了不少时间和 AI 做工具，现在还是很愿意做。有了想法，就试着做出来；用着不顺手，再接着改。</p>
+<p>这些想法有的来自业务，有的来自我自己的需要。过去做产业调研、写方案的经历，也影响了我看待需求的方式。</p>
+<h2>先了解对方需要什么</h2>
+<p>硕士期间，我参与了 8 个区域公用品牌项目，其中主导 5 个。累计调研 105 天，覆盖 19 个典型地区，实地调研政府领导和当地产业企业家 100 余人，设计并发放 4 套问卷，产出 26 份报告。项目包括省级、地级市及县级市等层级。</p>
+<p>做方案时，我要了解当地有什么资源，也要了解产品卖给谁、通过什么渠道卖、企业有没有能力持续供货。政府和企业关心的事情不完全一样，问卷、访谈和产业数据需要放在一起看。</p>
+<p>后来做工具，我也习惯先问：谁会用，正在做什么，现有办法哪里不方便。只有把这些事弄清楚，才知道要改的是哪一步。</p>
+<h2>在腾讯，先想清楚怎么考察，再让 AI 出题</h2>
+<p>销培生转正考核原来的题目比较固定，完全由面试官自由发挥，又可能沿用学生熟悉的项目。我想让题目有变化，同时保留双方发挥的余地。</p>
+<p>我设计了明暗题卡：学生看到行业和任务，自己选择解法；面试官多一份客户背景和追问参考，可以提示，也可以追问。我和同事试用后，又根据权限不好调整的反馈修改规则，并补上自动出题功能。</p>
+<p>这套工具形成了 107 道题、3 批次、20 个行业的材料，累计使用 100+ 次，支撑面向 200+ 学生的考核设计。AI 可以帮忙生成题目，但题目是否适用、怎样追问、如何判断学生的表现，仍然需要人来决定。效率和选拔效果还没有完整统计。</p>
+<h2>见见面，是我想给自己用的工具</h2>
+<p>照片和视频散在聊天记录里，时间一久就不好找。我想按见面的日期整理，把影像、地点和当天的小事放在一起，于是开始做见见面。</p>
+<p>我先验证照片浏览，再增加视频。早期也删过对回看帮助不大的日历模块，暂缓过公网部署，后来逐步做出 Web 个人版和 Android 开发 APK。现在网站里的日历，是整理公开体验版时重新提供的一种浏览方式。</p>
+<p>代码主要由 AI 实现，工具本身并没有因此自动具备 AI 功能。我更在意自己用起来顺不顺手，也会暂缓让界面变复杂的附加功能。想留住的是见面时的记录，所以日期、照片和几句备注，就值得先做好。</p>
+<h2>记忆工作台做得太复杂，我决定先减少功能</h2>
+<p>Chriptmas OS 也是从自己的需要开始的。我存了很多资料，每次交给 Agent 接着做事，还得重新整理、解释前面讨论过什么。我希望有一个工具能记住这些内容。</p>
+<p>后来，我同时想做知识归档、长期记忆和任务执行。我借助 AI 做出了 React、Electron 和 Python 桌面原型，也在实际试用中重新梳理了各项功能的依赖与优先级。</p>
+<p>我决定把资料整理和任务工作台分开，下一步先检查一份资料能不能保存原文、提取内容、由人核对，再找到出处交给 AI 使用。这一轮重构还没有完成。</p>
+<p>我把 Agent 看作替人做事的代行者。它需要理解人的意愿，也要知道依据哪些资料、可以操作到什么程度。记忆能否查看和修改，遇到不确定的情况是否先问人，这些都是我接下来想继续解决的问题。</p>
+<h2 id="ai-native">先想清楚，再一起动手</h2>
+<p>AI 帮我实现代码，也会在讨论中指出我没考虑到的地方。写作时，我仍然要花不少时间调整语序、用词和分寸。我想继续摸清，哪些事情交给 AI 能帮上忙，哪些判断需要自己做。</p>
+<p>直接和 AI 讨论很容易投入，但先形成自己的想法、把已有信息和限制说明白，也很重要。我希望接下来能更有意识地先思考、再讨论、再实现，并记录失败和修改的结果。</p>
+<p>我期待 AI 像电脑一样，逐渐成为生活中常用的工具。但人想怎样生活、怎样表达，愿意把哪些事情交给它，都应该可以自己选择。方便和高效之外，人的习惯、感受、尊严和审美，也需要在产品里得到尊重。</p>
+<div class="post-end"><a href="../notes.html">返回文章列表</a></div>
+</main>
+<footer class="site-footer"><div class="wrap footer-inner"><p><strong>熊帝权 · DIQUAN XIONG</strong>© 2026</p><div class="footer-links"><a href="../notes.html">项目记录</a><a href="https://github.com/qingmingyiyang">GitHub ↗</a><a href="../index.html#top">回到顶部 ↑</a></div></div></footer></body>
+</html>
+

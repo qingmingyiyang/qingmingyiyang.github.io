@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="见见面：按日期收藏照片、视频和几句回忆。浏览示例，或在自己的浏览器里记下一天。" name="description"/>
+<meta content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<title>见见面 · 把日子翻回那一天</title>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/><link href="app.css" rel="stylesheet"/>
+<script defer="" src="core.js"></script><script defer="" src="app.js"></script>
+<link href="../../site-theme.css?v=20260913-warm" rel="stylesheet"/></head>
+<body class="album-app">
+<a class="skip" href="#album">跳到日历</a>
+<header class="topbar wrap"><a class="brand" href="../../projects/meeting-memories.html"><span aria-hidden="true" class="brand-mark">◒◒</span><span>见见面<small>MEET &amp; KEEP</small></span></a><div class="top-actions"><span class="edition">个人影像记录工具</span><button aria-label="切换深色模式" aria-pressed="false" class="quiet" id="theme">夜晚模式 ◐</button><a class="back-link" href="../../projects/meeting-memories.html">返回项目详情 ↗</a></div></header>
+<main class="wrap" id="app">
+<section class="intro"><div><p class="eyebrow">日子往前走，回忆有处放。</p><h1>把日子，<span>翻回那一天。</span></h1><p class="intro-copy">一起散过的步，临时起意的出发，还有好久不见的那顿饭。<br/>用一张照片、几句话，留下当时的心情。</p></div><div aria-hidden="true" class="intro-stamp"><span>KEEP THE<br/>LITTLE THINGS</span><b>见 · 面</b><small>一些平常而珍贵的日子</small></div></section>
+<div class="mode-bar"><div aria-label="选择相册" class="mode-switch" role="group"><button aria-pressed="true" id="demo-mode">先逛逛示例</button><button aria-pressed="false" id="personal-mode">我的回忆</button></div><p id="mode-caption">3 段虚构回忆 · 配图为原创插画</p><button class="primary" id="new-day">＋ 记下我的一天</button></div>
+<div class="notice" hidden="" id="storage-warning" role="status"></div>
+<section aria-label="见面日历和当天回忆" class="album-layout" id="album">
+<aside class="calendar-panel"><div class="calendar-head"><div><p class="eyebrow">翻翻日历</p><h2 id="month-label">2026 年 9 月</h2></div><div class="month-arrows"><button aria-label="上个月" id="prev-month">←</button><button aria-label="下个月" id="next-month">→</button></div></div><div aria-hidden="true" class="weekdays"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div aria-label="选择日期" class="calendar-grid" id="calendar-grid" role="group"></div><p class="calendar-legend"><span>●</span> 有回忆的日子，亮着一盏小灯。</p><div class="date-jump-row"><label class="date-jump">跳转日期<input id="date-jump" max="2099-12-31" min="2000-01-01" type="date"/></label><button class="quiet today-button" id="today">回到今天</button></div><div class="recent-heading"><h3>值得再翻一遍</h3><span id="record-count">3 天</span></div><div class="recent-days" id="recent-days"></div><p class="calendar-footnote">不必每天发生大事。<br/>想记下的时候，就留一笔。</p></aside>
+<article aria-labelledby="day-title" class="day-panel"><div class="day-meta"><span id="day-date">2026 / 09 / 06</span><span id="day-tag">示例回忆</span></div><div class="day-heading"><h2 id="day-title">沿着湖边，慢慢走</h2><p id="day-location">湖边步道</p></div><div class="media-stage" id="media-stage"></div><div aria-label="选择影像" class="media-thumbs" id="media-thumbs"></div><div class="memory-note"><span aria-hidden="true">“</span><p id="day-note"></p></div><div class="day-bottom"><p id="media-count"></p><button class="quiet" hidden="" id="edit-day">编辑这一天 ↗</button><button class="quiet" id="try-own">也记下我的一天 ↗</button></div>
+<form class="editor" hidden="" id="editor"><div class="editor-head"><h3>给这一天，留几句话</h3><span id="save-state">尚未保存</span></div><div class="field-pair"><label>当天的标题<input id="title-input" maxlength="60" placeholder="比如：终于见到了，好久不见的朋友"/></label><label>在哪里<input id="location-input" maxlength="80" placeholder="一个你记得的地方"/></label></div><label>那天的小事<textarea id="note-input" maxlength="2000" placeholder="说了什么，路过哪里，当时是什么心情……" rows="3"></textarea></label><div class="upload-row"><label class="upload-button">＋ 添加照片 / 视频<input accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm" id="media-input" multiple="" type="file"/></label><span>每个文件 ≤ 15 MB · 总计 ≤ 30 MB</span></div><div class="draft-files" id="draft-files"></div><div class="editor-actions"><button class="primary" id="save-day" type="submit">保存这一天</button><button class="quiet" id="cancel-edit" type="button">取消修改</button></div></form>
+</article></section>
+<section class="storage-section" id="storage-tools"><div><p class="eyebrow">属于你的回忆，由你带走</p><h2>留在这里，也能放进行囊。</h2><p>记录和影像保存在当前浏览器，不会上传。换设备或清理浏览器前，记得下载一份备份。</p></div><div class="backup-actions"><button class="secondary" id="export">下载我的备份 ↓</button><label class="secondary upload-button">导入体验版备份 ↑<input accept="application/json,.json" id="import" type="file"/></label><small>备份包含文字与影像 · 仅支持此公开体验版格式</small></div></section>
+<details class="product-note"><summary>关于这个版本</summary><p>由原「见面回忆录」Web 原型整理而来，保留日期回看、照片与视频、地点、备注和备份的主线。本页是为作品集重新设计的公开体验版；示例内容均为虚构。原型的文件夹存储、旧版 ZIP 迁移和分享卡片不在本页提供。个人使用的 Web 原型与 Android 开发版仍是独立版本。</p><p>熊帝权提出需求与产品取舍，代码与 AI 协作实现。此版本不调用 AI 模型，也不承诺浏览器本地存储永久可靠。</p></details>
+</main>
+<footer class="wrap footer"><span>见见面 · 把平常的日子，认真收好。</span><span>BUILT WITH CARE, AND AI.</span></footer>
+<div aria-live="polite" class="toast" hidden="" id="toast" role="status"></div>
+<dialog aria-label="查看影像" id="lightbox"><div class="lightbox-bar"><span id="lightbox-caption"></span><button aria-label="关闭影像" id="close-lightbox">关闭 ×</button></div><div id="lightbox-media"></div><div class="lightbox-nav"><button aria-label="上一张影像" id="prev-media">← 上一张</button><span id="lightbox-counter"></span><button aria-label="下一张影像" id="next-media">下一张 →</button></div></dialog>
+<dialog aria-labelledby="confirm-title" id="confirm-dialog"><h2 id="confirm-title">确认操作</h2><p id="confirm-message"></p><div class="editor-actions"><button class="primary" id="confirm-yes">确认</button><button class="secondary" id="confirm-no">返回</button></div></dialog>
+<noscript><p class="wrap notice">开启 JavaScript 后可以翻日历、查看影像和保存记录。</p></noscript>
+</body></html>
+
