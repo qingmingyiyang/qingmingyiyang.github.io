@@ -1,0 +1,48 @@
+/* Shared dark tokens and semantic surfaces for detail pages, articles and tools.
+   Home keeps home-editorial.css. System changes remain live; album can override. */
+:root{color-scheme:light dark}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+@media screen{
+  html[data-theme=dark] body:not(.strategy-home){
+    --paper:#272621;--white:#272621;--bg:#1d1c19;--ink:#eeeae2;--muted:#bbb6ab;
+    --green:#dfa087;--accent:#dfa087;--red:#dfa087;--blue:#a9c5e2;--line:#514d43;
+    --soft:#302e27;--tint:#383129;--shadow:none;
+    --story-green:#dfa087;--story-ochre:#dfa087;--story-line:#514d43;--story-soft:#302e27;
+    background:#1d1c19!important;background-image:none!important;color:var(--ink)!important;
+  }
+  html[data-theme=dark] body:not(.strategy-home) :is(h1,h2,h3,h4,h5,p,li,span,small,strong,b,em,label,a,summary,button,div,th,td,figcaption){color:inherit}
+  html[data-theme=dark] body:not(.strategy-home) :is(h1,h2,h3,h4,h5,strong,b,label,summary,button,input,textarea,select){color:var(--ink)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(p,li,small,figcaption,.lead,.hint,.meta,.breadcrumb,.project-meta,.gallery-caption,.detail-note,.permission-line,.demo-footnote,.footer-inner,.footer-links,.note-row>small){color:var(--muted)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(a,.eyebrow,.story-kicker,.chapter-number,.flow-number,.stage-label,.scope-state,.brand-mark,.day-meta,.calendar-legend>span){color:var(--accent)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.site-header,.topbar){background:#1d1c19f5!important;border-color:var(--line)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.identity,.brand){color:var(--ink)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.identity-mark,.flow-number){background:#3d342a!important;color:#eeeae2!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.site-footer,.footer-inner,.header-inner,.post-end,.detail-modules details,.story-chapter,.strategy-detail-case,.note-row,.story-flow li,.practice-flow li,.story-flow small){border-color:var(--line)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.case-column,.gallery-aside,.experience-chapter,.note-row,.hero-demo,.visible-card,.clue-card,.gallery-stage,.gallery-thumb,.steps>div,.scope-comparison>div,.research-example,.research-counts,.fact-row,.reflection,.story-nav,.project-nav,.story-thesis,.story-card,.work-card,.project-update,.detail-modules details,.practice-flow li,.not-found-card,.tool-grid>div,main.post,.album-layout,.storage-section,dialog,.mode-switch,.calendar-panel,.day-panel,.editor,.media-stage,.date-tile,.toast){background:var(--paper)!important;background-image:none!important;border-color:var(--line)!important;box-shadow:none!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.story-nav,.story-thesis,.reflection,.project-update,.gallery-aside,.role-tabs,.clue-card.revealed,.research-counts,.fact-row,.story-card,.scope-comparison>div:last-child){background:var(--soft)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.story-chapter,.story-chapter>.case-column,.story-page.article-page main.post){background:transparent!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.story-statement,.section-subheading,.story-heading>span,.reflection h3,.detail-modules summary>span,.research-counts strong,.fact-row strong,.permission-line strong){color:var(--accent)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(button,.button,.secondary,.screenshot-close,.upload-button,input,textarea,select){background:#302e27!important;border-color:#756e61!important;color:var(--ink)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.primary,.button.primary,button[type=submit],.context-app button:not(.secondary)){background:#dfa087!important;border-color:#dfa087!important;color:#241f1b!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.role-tabs button[aria-selected=true],.mode-switch button[aria-pressed=true],.calendar-grid button[aria-pressed=true],.recent-days button[aria-pressed=true]){background:#dfa087!important;color:#241f1b!important;border-color:#dfa087!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.role-tabs button[aria-selected=true],.mode-switch button[aria-pressed=true],.calendar-grid button[aria-pressed=true],.recent-days button[aria-pressed=true]) *{color:#241f1b!important;background:transparent!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(button:hover:not(:disabled),.button:hover,.upload-button:hover){background:#494034!important;color:#fff2e5!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(input,textarea)::placeholder{color:#aaa396!important;opacity:1}
+  html[data-theme=dark] body:not(.strategy-home) :is(.zoom-label,.image-hint){background:#272621ee!important;color:#eeeae2!important;border-color:var(--line)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.intro-stamp,.intro-stamp::after,.live-album,.live-album summary,.media-thumbs button){border-color:var(--line)!important;color:var(--muted)!important}
+  html[data-theme=dark] body:not(.strategy-home) .live-album summary{background:var(--paper)!important}
+  html[data-theme=dark] body:not(.strategy-home) a:is(.skip-link,.skip){background:#eeeae2!important;color:#24231f!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.stage-label,.world-detail-graphic,.cover-world,.world-step i){background:var(--soft)!important;background-image:none!important;color:var(--ink)!important;border-color:var(--line)!important}
+  html[data-theme=dark] body:not(.strategy-home) .world-step.active i{background:#dfa087!important;color:#241f1b!important}
+  html[data-theme=dark] body:not(.strategy-home) .world-step span{background:var(--soft)!important;color:var(--muted)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(.gallery-stage img,.live-album iframe){background:var(--paper)!important}
+  html[data-theme=dark] body:not(.strategy-home) :is(a,button,input,textarea,summary,select):focus-visible{outline:2px solid #edb297!important;outline-offset:4px}
+  html[data-theme=dark] body:not(.strategy-home) ::selection{background:#72503d;color:#fff8ee}
+  html[data-theme=dark] body:not(.strategy-home) dialog::backdrop{background:#000b}
+}
+@media print{
+  :root,:root[data-theme]{color-scheme:light}
+  html[data-theme] body.album-app{--bg:#fff;--paper:#fff;--ink:#29372d;--muted:#596151;--red:#315a46;--line:#ccc;--tint:#edf2e9;--soft:#f7f4eb;background:#fff;color:#29372d}
+  html[data-theme] .album-app .memory-note>p{color:#596151}
+}
