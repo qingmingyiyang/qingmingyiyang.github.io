@@ -29,7 +29,10 @@
     const root = center.getBoundingClientRect();
     branches.forEach((branch, i) => {
       const title = branch.querySelector('h3 a').getBoundingClientRect();
-      const start = edge(root, title, origin), end = edge(title, root, origin);
+      const start = edge(root, title, origin);
+      // Approach the inward-facing title edge so the branch's opaque list never masks the connector.
+      const inwardX = root.left + root.width / 2 > title.left + title.width / 2 ? title.right + 12 : title.left - 12;
+      const end = [inwardX - origin.left, title.top + title.height / 2 - origin.top];
       paths[i].setAttribute('d', `M${start.join(' ')} L${end.join(' ')}`);
     });
   }
