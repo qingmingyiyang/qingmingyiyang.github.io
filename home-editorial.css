@@ -18,12 +18,17 @@ body.strategy-home{--paper:#faf9f5;--ink:#24231f;--muted:#68665f;--line:#dedcd3;
 .strategy-home .github-link{background:#24231f;color:#faf9f5;padding:8px 17px;border-radius:7px;font-size:13px}
 .strategy-home .github-link::after{content:none}
 .strategy-home .github-link:hover{background:#49463e}
-.profile-opening{position:relative;display:grid;place-items:center;min-height:695px;padding:100px 0 104px}
+.profile-opening{position:relative;display:grid;place-items:center;min-height:730px;padding:60px 0 70px}
 .profile-copy{position:relative;z-index:1;text-align:center;width:min(680px,100%)}
 .overline{font-size:12px;letter-spacing:.12em;color:#a2523b}
 .profile-copy h1{font-size:clamp(46px,4.7vw,68px);line-height:1.28;margin:25px -20px 20px;letter-spacing:-.055em}
 .hero-identity{color:var(--muted);font-size:13px;margin-bottom:22px}
 .profile-intro{max-width:550px;margin:auto;font-size:17px;line-height:1.95;color:#68665f;text-wrap:pretty}
+.profile-education{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:550px;margin:25px auto 0;padding-top:20px;border-top:1px solid var(--line);text-align:left}
+.profile-education dt{font-size:15px;font-weight:500;margin-bottom:4px}.profile-education dd{margin:0;font-size:12px;line-height:1.9;color:var(--muted)}
+.profile-honors{margin:20px auto 0;max-width:640px}.profile-honors>p{font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.1em}
+.profile-honors ul{display:flex;flex-wrap:wrap;justify-content:center;gap:5px 18px;list-style:none;margin:0;padding:0}.profile-honors li{font-size:12px;color:var(--ink)}.profile-honors li span{font-size:10px;color:var(--muted);margin-left:3px}
+@media(max-width:600px){.profile-education{gap:16px;margin-top:22px;padding-top:18px}.profile-education dt{font-size:14px}.profile-education dd{font-size:11px}.profile-honors{margin-top:18px}.profile-honors ul{gap:5px 12px}.profile-honors li{font-size:11px}}
 .hero-actions{display:flex;justify-content:center;gap:12px;margin-top:30px}
 .hero-primary,.hero-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 20px;font-size:14px;border-radius:7px;border:1px solid #d4d1c7}
 .hero-primary{background:#24231f;border-color:#24231f;color:#fff}
@@ -88,9 +93,9 @@ body.strategy-home{--paper:#faf9f5;--ink:#24231f;--muted:#68665f;--line:#dedcd3;
 .map-heading>p:last-child{font-size:12px;color:var(--muted)}
 .map-canvas{position:relative;height:580px;margin-top:20px}
 .map-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.map-lines path{fill:none;stroke:var(--line);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.map-lines path{fill:none;stroke:var(--line);stroke-width:1.1;vector-effect:non-scaling-stroke}
 .map-lines path{transition:stroke .25s,stroke-width .25s}
-.map-lines path.map-active{stroke:var(--green);stroke-width:2}
+.map-lines path.map-active{stroke:var(--green);stroke-width:1.4}
 .map-branch.map-active h3 a,.map-branch.map-active h3 span{color:var(--green)}
 .map-branch h3 span{display:inline-block;transition:transform .22s,color .22s}
 .map-branch.map-active h3 span{transform:translate(3px,-3px)}
@@ -102,7 +107,7 @@ body.strategy-home{--paper:#faf9f5;--ink:#24231f;--muted:#68665f;--line:#dedcd3;
 @media(prefers-reduced-motion:reduce){.map-branch.map-active h3 span{transform:none}}
 .map-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;background:var(--paper);padding:12px 25px;white-space:nowrap}
 .map-center h2{display:inline;font-size:48px;letter-spacing:.03em}.map-mark{font:35px Georgia,'SimSun',serif;color:var(--green);margin-right:12px}.map-center p{font-size:11px;color:var(--muted);letter-spacing:.17em;margin-top:9px}
-.map-branch{position:absolute;width:34%;padding:12px;background:var(--paper)}
+.map-branch{position:absolute;width:34%;padding:12px;background:transparent}
 .map-research{left:1%;top:4%}.map-business{right:1%;top:4%}.map-products{left:1%;top:72%}.map-notes{right:1%;top:72%}
 .map-branch h3{font-size:28px;margin-bottom:20px;line-height:1.5}.map-branch h3 span{font:15px var(--font);color:var(--muted);margin-left:5px}
 .map-branch ul{list-style:none;display:flex;flex-wrap:wrap;gap:12px 20px;margin:0;padding:0 0 0 12px;border-left:1px solid var(--line)}

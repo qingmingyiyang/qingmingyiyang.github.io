@@ -17,11 +17,12 @@
   let frame = 0, lastTime = 0, elapsed = 0, mouseX = 0, mouseY = 0;
   const positions = branches.map(() => ({x:0,y:0}));
   let entrance = [];
-  function edge(rect, other, origin) {
+  function edge(rect, other, origin, gap) {
     const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
     const dx = other.left + other.width / 2 - cx, dy = other.top + other.height / 2 - cy;
-    const ratio = Math.min((rect.width / 2 + 12) / Math.max(Math.abs(dx), .01), (rect.height / 2 + 10) / Math.max(Math.abs(dy), .01));
-    return [cx + dx * ratio - origin.left, cy + dy * ratio - origin.top];
+    const ratio = Math.min(rect.width / 2 / Math.max(Math.abs(dx), .01), rect.height / 2 / Math.max(Math.abs(dy), .01));
+    const distance = Math.max(Math.hypot(dx, dy), 1);
+    return [cx + dx * ratio + dx / distance * gap - origin.left, cy + dy * ratio + dy / distance * gap - origin.top];
   }
   function draw() {
     const origin = canvas.getBoundingClientRect();
@@ -29,9 +30,9 @@
     const root = center.getBoundingClientRect();
     branches.forEach((branch, i) => {
       const title = branch.querySelector('h3 a').getBoundingClientRect();
-      const start = edge(root, title, origin);
-      // Approach the inward-facing title edge so the branch's opaque list never masks the connector.
-      const inwardX = root.left + root.width / 2 > title.left + title.width / 2 ? title.right + 12 : title.left - 12;
+      // Leave breathing room at both ends; approach from the open side, clear of the link list.
+      const start = edge(root, title, origin, 22);
+      const inwardX = root.left + root.width / 2 > title.left + title.width / 2 ? title.right + 26 : title.left - 26;
       const end = [inwardX - origin.left, title.top + title.height / 2 - origin.top];
       paths[i].setAttribute('d', `M${start.join(' ')} L${end.join(' ')}`);
     });
