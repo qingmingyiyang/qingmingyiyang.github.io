@@ -42,7 +42,7 @@
   .cover .corner { position: absolute; left: -70px; top: -50px; width: 440px; opacity: .55; pointer-events: none; }
   .cover .sun { position: absolute; right: 13%; top: 15%; width: 64px; height: 64px; border-radius: 50%; background: #F2C98E; opacity: .5; pointer-events: none; }
   .cover nav { position: relative; z-index: 2; display: flex; justify-content: flex-end; gap: 30px; padding: 26px 48px 0; font-size: 16px; letter-spacing: .18em; color: var(--muted); }
-  .cover nav a { text-decoration: none; }
+  .cover nav a { text-decoration: none; white-space: nowrap; }
   .cover nav a:hover { color: var(--zhu); }
   .face { position: relative; z-index: 1; align-self: center; text-align: center; padding: 0 24px 22vh; }
   .face h1 { margin: 0; line-height: 0; }
@@ -51,12 +51,18 @@
   .face .sub .ai { letter-spacing: .08em; margin-right: .42em; }
   .face .sub .hr { letter-spacing: .12em; margin-right: .38em; }
   .face .sub i { font-style: normal; color: var(--zhu); letter-spacing: 0; margin: 0 .5em 0 .1em; }
+  .face .pitch { margin: 26px 0 0; font: 500 clamp(18px, 1.55vw, 22px)/1.7 var(--serif); letter-spacing: .14em; color: var(--ink); }
+  .face .proof { margin: 6px auto 0; max-width: 52em; font-size: 15px; line-height: 1.7; letter-spacing: .06em; color: var(--muted); }
+  .face .proof i { font-style: normal; color: var(--zhu); margin: 0 .7em; }
   .badge { position: relative; width: 44px; height: 44px; border-radius: 50%; border: 1.4px solid var(--zhu); background: var(--paper); color: var(--zhu); display: grid; place-items: center; font: 600 17px/1 var(--serif); }
   .tikuan { position: absolute; z-index: 1; right: 33%; bottom: 12%; margin: 0; writing-mode: vertical-rl; height: 10.6em; font: 500 12.5px/1.3 var(--serif); letter-spacing: .12em; color: var(--dan-text); }
   .tikuan b { font-weight: 700; color: rgba(60, 52, 44, .6); }
+  .tikuan b, .tikuan span { display: block; }
+  .tikuan span { margin-top: 2.4em; }
   .tikuan em { font-style: normal; -webkit-text-emphasis: open circle var(--zhu); text-emphasis: open circle var(--zhu); }
   .foot { position: relative; z-index: 1; text-align: center; padding: 0 24px 28px; font-size: 15.5px; letter-spacing: .3em; color: rgba(50, 44, 38, .62); }
   .foot i { font-style: normal; color: var(--zhu); margin: 0 .3em; letter-spacing: 0; }
+  .foot span { white-space: nowrap; }
 
   /* ---------- 长卷 ---------- */
   .juan-head { text-align: center; padding: 110px 24px 34px; }
@@ -87,13 +93,18 @@
   .mulu .num { width: 48px; height: 48px; border-radius: 50%; border: 1.4px solid var(--zhu); color: var(--zhu); display: grid; place-items: center; font: 700 20px/1 var(--serif); }
   .mulu .t { font: 700 29px/1.3 var(--serif); letter-spacing: .2em; white-space: nowrap; }
   .mulu .leader { border-bottom: 1.5px dotted rgba(70, 60, 50, .35); transform: translateY(6px); }
-  .mulu .d { font-size: 17.5px; letter-spacing: .06em; color: var(--ink-soft); text-align: right; }
+  .mulu .d { font-size: 17.5px; letter-spacing: .06em; color: var(--ink); text-align: right; line-height: 1.6; }
+  .mulu .d span, .mulu .d small { display: block; text-wrap: pretty; }
+  .mulu .d small { font-size: 15.5px; color: var(--muted); }
   .mulu a:hover .t { color: var(--zhu); }
 
   /* ---------- 正文 ---------- */
   .vol { max-width: 980px; margin: 0 auto; padding: 120px 24px 20px; }
   .vol-head { text-align: center; margin-bottom: 40px; }
   .vol-head .badge { margin: 0 auto 18px; width: 56px; height: 56px; font-size: 22px; font-weight: 700; }
+  .case { margin: 0 0 46px; padding: 24px 0 28px; border-top: 1.4px solid var(--zhu); border-bottom: 1px solid var(--dan); }
+  .case h3 { margin: 0 0 10px; font: 700 23px/1.5 var(--serif); letter-spacing: .08em; color: var(--zhu); }
+  .case p { margin: 0; }
   .lead { margin: 0 0 34px; }
   .entries { list-style: none; margin: 0; padding: 0; position: relative; }
   .entries.seq::before { content: ""; position: absolute; left: 22px; top: 18px; bottom: 30px; width: 1.2px; background: var(--zhu); opacity: .45; }
@@ -126,16 +137,19 @@
   }
   @media (max-width: 700px) {
     .cover { min-height: 100svh; display: block; }
-    .cover nav { justify-content: center; gap: 18px; padding: 18px 12px 0; letter-spacing: .08em; font-size: 14.5px; }
+    .cover nav { justify-content: center; flex-wrap: wrap; gap: 4px 18px; padding: 18px 12px 0; letter-spacing: .08em; font-size: 14.5px; }
     .cover .land { height: 46%; }
     .cover .sun { right: auto; left: 18%; top: 30%; width: 46px; height: 46px; }
-    .cover .corner { width: 260px; left: -90px; right: auto; top: 40px; }
+    .cover .corner { width: 190px; left: -70px; right: auto; top: 44px; }
     .face { position: absolute; top: 72px; right: 22px; padding: 0; display: flex; flex-direction: row-reverse; align-items: flex-start; gap: 14px; text-align: left; }
     .face h1 img { width: 100px; }
     .face .sub { writing-mode: vertical-rl; margin: 10px 0 0; font-size: 17px; letter-spacing: .3em; padding: 0; }
     .face .sub .ai, .face .sub .hr { text-combine-upright: all; letter-spacing: 0; margin: 0; }
   .face .sub .hr { letter-spacing: .12em; margin-right: .38em; }
   .face .sub i { margin: .3em 0; }
+    .face .pitch { writing-mode: vertical-rl; margin: 12px 0 0; font-size: 15.5px; line-height: 1.85; letter-spacing: .16em; }
+    .face .pitch span { display: block; }
+    .face .proof { display: none; }
     .tikuan { display: none; }
     .foot { position: absolute; left: 0; right: 0; bottom: 0; font-size: 12.5px; letter-spacing: .04em; padding: 0 12px 16px; }
     .juan-head { padding-top: 80px; }
@@ -152,8 +166,14 @@
     .mulu .leader { display: none; }
     .mulu .t { font-size: 23px; letter-spacing: .12em; }
     .mulu .d { grid-column: 2 / -1; grid-row: 2; text-align: left; font-size: 16px; }
+    .mulu .d small { font-size: 14.5px; }
     .tiba { grid-template-columns: 1fr; row-gap: 28px; padding: 80px 24px 90px; }
     .tiba figure { max-width: 180px; }
+  }
+  @media (max-width: 360px) {
+    .cover nav { gap: 2px 12px; font-size: 13.5px; letter-spacing: 0; }
+    .cover .corner { display: none; }
+    .cover .sun { left: 8%; top: 54%; }
   }
 </style>
 </head>
@@ -174,20 +194,22 @@
   <div class="face">
     <h1 id="name-h"><picture><source media="(max-width: 700px)" srcset="assets/book/title-brush-v.png"><img src="assets/book/title-brush.png" alt="熊帝权" width="723" height="231"></picture></h1>
     <p class="sub">战略分析<i>·</i><span class="hr">HR</span><i>·</i><span class="ai">AI</span>应用</p>
+    <p class="pitch"><span>去现场把问题看清楚，</span><span>再写成方案、做成工具，</span><span>交给要用的人。</span></p>
+    <p class="proof">汈汊湖满膏蟹品牌设计获汉川市委市政府采纳，已有企业印上包装<i>·</i>腾讯实习做的考核出题工具用了100多次</p>
   </div>
 
-  <p class="tikuan" aria-label="题款：品牌战略分析工作流的目标"><b>品牌调研工作流</b>　将专家研究判断转为普通人<em>可执行</em>、<em>随证据迭代</em>的品牌战略调研流程</p>
-  <p class="foot">武汉大学　宏观质量管理硕士<i>·</i>二〇二七届<i>·</i>重庆大学　工商管理本科</p>
+  <p class="tikuan" aria-label="题款"><b>熊帝权作品集</b><span>二〇二六年秋</span></p>
+  <p class="foot"><span>武汉大学　宏观质量管理硕士</span><i>·</i><span>二〇二七届</span><i>·</i><span>重庆大学　工商管理本科</span></p>
 </header>
 
 <main id="main">
   <section class="mulu" id="mulu" aria-labelledby="mulu-h">
     <h2 id="mulu-h"><img src="assets/book/title-mulu.png" alt="目录" width="390" height="140"></h2>
     <ol>
-      <li><a href="#ch-1"><span class="num">壹</span><span class="t">调研长卷</span><span class="leader" aria-hidden="true"></span><span class="d">实地调研160+天，覆盖14个省或直辖市、23个城市</span></a></li>
-      <li><a href="#ch-2"><span class="num">贰</span><span class="t">战略分析</span><span class="leader" aria-hidden="true"></span><span class="d">8个品牌项目，主导5个；与团队形成24万余字调研报告</span></a></li>
-      <li><a href="#ch-3"><span class="num">叁</span><span class="t">HR</span><span class="leader" aria-hidden="true"></span><span class="d">腾讯AI for HR实习，对接5个招聘方向；蔚来HR实习</span></a></li>
-      <li><a href="#ch-4"><span class="num">肆</span><span class="t">AI应用</span><span class="leader" aria-hidden="true"></span><span class="d">考核出题工具被使用100余次；两个开源AI项目</span></a></li>
+      <li><a href="#ch-1"><span class="num">壹</span><span class="t">调研长卷</span><span class="leader" aria-hidden="true"></span><span class="d"><span>在产区和交易市场跑了160多天</span><small>判断先到现场对一遍</small></span></a></li>
+      <li><a href="#ch-2"><span class="num">贰</span><span class="t">战略分析</span><span class="leader" aria-hidden="true"></span><span class="d"><span>汈汊湖满膏蟹品牌设计获汉川采纳，已有企业印上包装</span><small>8个品牌项目，主导5个</small></span></a></li>
+      <li><a href="#ch-3"><span class="num">叁</span><span class="t">HR</span><span class="leader" aria-hidden="true"></span><span class="d"><span>半个月清完积压简历，新简历当天看完</span><small>5个招聘方向，先问清业务要什么人</small></span></a></li>
+      <li><a href="#ch-4"><span class="num">肆</span><span class="t">AI应用</span><span class="leader" aria-hidden="true"></span><span class="d"><span>出题工具用了100多次，给200多名学生出过考核题</span><small>规则我定，代码交给AI</small></span></a></li>
     </ol>
   </section>
 
@@ -202,13 +224,13 @@
         <div class="scene"><img src="assets/book/field-pond-walk.jpg" alt="调研人员戴草帽走在养殖池塘之间的堤上"><p><b>池塘养殖</b>走进水产生产现场</p></div>
         <div class="scene"><img src="assets/book/field-farmer-interview.jpg" alt="熊帝权在池塘边的棚子下访谈一位养殖户"><p><b>养殖户访谈</b>学习一线经验</p></div>
         <div class="scene"><img class="tall" src="assets/book/field-cooperative.jpg" alt="专业合作社门店"><p><b>专业合作社</b>调研品牌养殖特色</p></div>
-        <div class="scene"><img src="assets/book/field-business-interview.jpg" alt="在河蟹经营户的店里访谈"><p><b>经营访谈</b>了解河蟹挑选与捆绑</p></div>
-        <div class="scene"><img src="assets/book/field-trading-center.jpg" alt="交易中心的价格显示屏"><p><b>交易中心</b>查看全国定价中心</p></div>
+        <div class="scene"><img src="assets/book/field-business-interview.jpg" alt="在江苏兴化的河蟹经营户店里访谈"><p><b>经营访谈</b>在兴化，挑蟹、绑蟹已经是专门的活</p></div>
+        <div class="scene"><img src="assets/book/field-trading-center.jpg" alt="兴化交易中心的价格显示屏"><p><b>交易中心</b>蟹按等级报价，客商都往这儿来</p></div>
         <div class="scene"><img src="assets/book/field-livestream.jpg" alt="直播电商的拍摄现场"><p><b>直播现场</b>学习直播电商传播</p></div>
         <div class="scene"><img src="assets/book/field-industry-meeting.jpg" alt="产业座谈会会议室"><p><b>产业座谈</b>学习发展情况</p></div>
       </div>
     </div>
-    <div class="juan-note"><span>长卷自右向左展开，可拖动或滑动。照片为调研现场原片。</span><span class="btns"><button type="button" data-d="-1">继续展开</button><button type="button" data-d="1">往回看</button></span></div>
+    <div class="juan-note"><span>长卷自右向左展开，可拖动或滑动。照片为调研现场原片，经营访谈与交易中心摄于江苏兴化。</span><span class="btns"><button type="button" data-d="-1">继续展开</button><button type="button" data-d="1">往回看</button></span></div>
   </section>
 
   <section class="vol" id="ch-2" aria-labelledby="v2-h">
@@ -217,12 +239,16 @@
       <h2 id="v2-h">战略分析</h2>
       <p class="meta">区域公用品牌与产业研究（战略咨询）　学生负责人　2024.10至今</p>
     </div>
+    <div class="case">
+      <h3>汉川：缺的不是分级，是市场认的品牌</h3>
+      <p>湖北河蟹产量大，好蟹却常被运到兴化、阳澄湖，换个牌子再卖。汉川也分级，可分出来的好蟹，市场不认那个价。所以方案让“汉川河蟹”铺开，再立一块“汈汊湖满膏蟹”的高端招牌。这项品牌设计获汉川市委市政府采纳；2026年9月，已有企业把新的品牌说法印上包装。</p>
+    </div>
     <p class="lead">在导师指导下累计参与8个项目，作为学生负责人主导5个，覆盖京山桥米、汉川河蟹、江夏鳜、松滋鸡等，项目平均执行周期为3个月，为湖北有关市县政府提供区域公用品牌发展的科学规划方案与决策参考。</p>
     <ol class="entries seq">
       <li><span class="marks"><span class="badge">1</span></span><div><h3>调研</h3><p>带领团队累计实地调研160+天，走访五常、兴化、高淳等产区及交易中心，进入80余个生产场景、140余家企业和单位，覆盖14个省或直辖市、23个城市。</p></div></li>
       <li><span class="marks"><span class="badge">2</span></span><div><h3>分析</h3><p>结合资料与数据库检索、SPSS问卷分析及消费者访谈，开展宏观行业分析、行业竞争分析，梳理本地现状并分析优劣势，提炼关键趋势。</p></div></li>
       <li><span class="marks"><span class="badge">3</span></span><div><h3>设计</h3><p>提出品牌未来发展方向和面向消费者的价值表达，形成涵盖政府、企业和协会的顶层设计方案与实施建议。</p></div></li>
-      <li><span class="marks"><span class="badge">4</span></span><div><h3>结果</h3><p>与团队累计产出6000余页PPT，本学年按“1+4+1”体系交付4份咨询主报告、25份专题报告；课题组成果在3次市委理论学习中心组（扩大）学习会上汇报，相关产业与企业实践获新华社等11篇媒体报道；汉川汈汊湖满膏蟹品牌设计获市委市政府采纳，2026年9月已有企业更新包装表达。</p></div></li>
+      <li><span class="marks"><span class="badge">4</span></span><div><h3>结果</h3><p>与团队累计产出6000余页PPT，本学年按“1+4+1”体系交付4份咨询主报告、25份专题报告；课题组成果在3次市委理论学习中心组（扩大）学习会上汇报，相关产业与企业实践获新华社等11篇媒体报道。“1+4+1”是一份总方案，四份分头落地的细案（交易中心、电商、产地场景、渠道），再加一份给市委市政府的结题汇报。</p></div></li>
     </ol>
     <p class="aside">另：良品铺子战略委员会管理咨询项目（2024.10–2025.04），在导师指导下围绕供应链与通路开展4项专项研究，比较10余个竞品案例，提出原产地直采及定位建议。</p>
     <p class="more">案例详情：<a href="experience.html#qiaomi">京山桥米</a>、<a href="experience.html#hanchuan">汉川河蟹</a>、<a href="experience.html#songzi">松滋鸡</a>、<a href="experience.html#guiyu">江夏鳜</a>、<a href="experience.html#bestore">良品铺子</a></p>
@@ -235,7 +261,7 @@
       <p class="meta">腾讯科技（深圳）有限公司　AI for HR实习生（CSIG）　2026.07–2026.09</p>
     </div>
     <ol class="entries seq">
-      <li><span class="marks"><span class="badge">1</span></span><div><h3>需求</h3><p>对接京沪深云业务售前架构师、大客户销售、生态拓展、渠道拓展等5个招聘方向，澄清业务需求、打磨JD。</p></div></li>
+      <li><span class="marks"><span class="badge">1</span></span><div><h3>需求</h3><p>对接京沪深云业务售前架构师、大客户销售、生态拓展、渠道拓展等5个招聘方向，先把业务要什么人问清楚，再打磨JD。</p></div></li>
       <li><span class="marks"><span class="badge">2</span></span><div><h3>筛选</h3><p>完成简历筛选、电话初筛及面试协调，形成候选人去重、新增标记与A/B/C分档清单。</p></div></li>
       <li><span class="marks"><span class="badge">3</span></span><div><h3>跟踪</h3><p>使用Excel跨表匹配、条件汇总及数据透视表支持候选人跟踪与渠道复盘。</p></div></li>
     </ol>
@@ -254,7 +280,7 @@
           </svg>
       <figcaption>招聘案头：分档清单与考核题卡</figcaption>
     </figure>
-    <p class="aside">此前：蔚来汽车（重庆）HR实习生（2023.11–2024.03），支持实习生及部分正式员工招聘，半个月清理积压简历，随后建立新增简历当日处理节奏；访谈区域销冠兼店长，提炼销售行为线索并设计情境问题。</p>
+    <p class="aside">此前在蔚来汽车（重庆）做HR实习生（2023.11–2024.03），支持实习生和部分正式员工招聘。接手时简历有积压，半个月清完，之后新简历当天看完；还访谈了区域销冠兼店长，把销售行为线索写成情境问题。</p>
     <p class="more">详情：<a href="experience.html#tencent">腾讯实习</a>、<a href="experience.html#nio">蔚来实习</a></p>
   </section>
 
@@ -265,10 +291,10 @@
       <p class="meta">在招聘与研究里，和AI协作把方法做成工具</p>
     </div>
     <ul class="entries par">
-      <li><span class="marks"><span class="dot"></span></span><div><h3>AI考核应用<small>腾讯</small></h3><p>设计行业题卡、五维评分及角色权限，与AI协作实现出题、分配和导出；形成107道题、20个行业、3批次材料，工具被使用100余次，支撑面向200余名学生的考核设计。</p></div></li>
-      <li><span class="marks"><span class="dot"></span></span><div><h3>招聘工作台原型<small>腾讯</small></h3><p>与AI协作实现招聘工作台原型，关联JD版本、匹配依据与沟通纪要，用于个人日常招聘工作。</p></div></li>
-      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/Incremind">Incremind · 积微</a><small>2026.06至今</small></h3><p>针对AI协作中资料分散、背景反复说明的问题，阅读谷歌Titans论文后设计信息增量原则，与AI协作完成工作台、资料库、设置三大模块，支持研究资料的可追溯查找与判断更新。</p></div></li>
-      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/brand-strategy-analysis">brand-strategy-analysis</a><small>2026.09至今</small></h3><p>基于对十余家知名区域公用品牌的调研经验，将实地调研、行业诊断、竞争分析、价值提炼与方案归纳写成AI工作流，以路由、具体工作流、基本单元明确输入、步骤、输出与检查标准。</p></div></li>
+      <li><span class="marks"><span class="dot"></span></span><div><h3>考核出题工具<small>腾讯</small></h3><p>前后用了100多次，给200多名销售培训生的转正考核出过107道题。起因是固定题怕被摸熟，随口问又太散，所以做了明暗题卡：学生看到行业背景和任务；面试官还能看到客户的隐藏条件和追问提示，比如客户刚出过安全事件，看学生会不会主动问。规则我定，代码主要让AI写。第一版权限一刀切，我和同事试用后都觉得不好调，就拆成了项目组、面试官、学生三种。</p></div></li>
+      <li><span class="marks"><span class="dot"></span></span><div><h3>招聘工作台原型<small>腾讯</small></h3><p>JD一改，之前的匹配结论就难回查。和AI一起做了个工作台，把JD版本、匹配依据和沟通纪要连在一起，自己日常招聘在用。</p></div></li>
+      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/Incremind">Incremind · 积微</a><small>2026.06至今</small></h3><p>跟AI合作，每开一个新对话都要从头讲背景。积微替AI记住已经确认的资料，后面只补新的；每条资料都能查到从哪来。设计时读了谷歌的Titans论文，定下“只记增量”的原则；工作台、资料库、设置三个模块是和AI一起做的，自己日常在用。</p></div></li>
+      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/brand-strategy-analysis">brand-strategy-analysis</a><small>2026.09至今</small></h3><p>我们调研过五常大米、阳澄湖大闸蟹等十几个有名的区域品牌，攒下一套做法。我把它写成AI能照着跑的流程：每一步要什么材料、做什么、交出什么、怎么检查，都写清楚了。想让没做过品牌研究的人，也能跟着走一遍。</p></div></li>
     </ul>
     <figure class="plate">
       <svg viewBox="0 0 420 280" role="img" aria-label="界画：方法楼阁，上层路由，中层五个具体工作流，底座为基本单元" style="fill:none;stroke:#1B1815;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round">
