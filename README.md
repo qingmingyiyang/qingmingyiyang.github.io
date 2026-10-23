@@ -2,10 +2,17 @@
 
 [公开主页](https://qingmingyiyang.github.io/) · [源码仓库](https://github.com/qingmingyiyang/qingmingyiyang.github.io)
 
-首页先介绍本人、学历、教育经历与代表荣誉，再依次呈现AI与HR流程实践、硕士阶段区域公用品牌研究，以及个人工具、校园和创作经历。腾讯案例展开招聘交付、个人使用的工作台原型及销培生考核，研究案例保留现场判断和交付依据。历史项目与文章保持原URL。
+全站为书封长卷风格。首页依次是书封、目录和四章：壹调研长卷、贰战略分析、叁HR、肆AI应用，最后是结尾。完整经历、文章和各作品页与首页同一套纸色、宋体和朱红点缀，页头为题字“熊帝权”和同一组导航。历史项目与文章保持原URL。
 
-设计规范见[DESIGN.md](DESIGN.md)。首页复用暖纸色、衬线标题、CSS连接Logo与可点击经历关系图；全站跟随系统深浅主题，持续动画支持暂停和减少动态效果。
+设计规范见[DESIGN.md](DESIGN.md)。全站固定浅色。
 
-页面基于静态HTML/CSS/JavaScript，不需要构建。首页样式为portfolio.css与home-editorial.css；其他个人页面复用site-theme.css和site-dark.css。portfolio.js维护导航与项目交互，map-motion.js仅增强关系导览。
+页面基于静态HTML/CSS/JavaScript，不需要构建：
+
+- 首页 index.html 的样式内联在页面里；
+- 其他页面共用 book.css；
+- portfolio.js 负责作品页截图画廊切换，showcase.js 负责考核题卡角色演示、截图放大和见见面内嵌日历；
+- 正文字体是思源宋体的子集（assets/book/fonts）。首页只加载首页用到的字；其他页面多出的字放在扩展包里，按 book.css 中的 unicode-range 加载。任何页面改了文字，都要先运行 work/PORTFOLIO-BOOK-20261023/claude/subset-site-fonts.py 重切字体再发布，否则新加的字会显示成别的字体。
+
+tools/ 下的上下文卡片和见见面是独立小工具，仍用原来的 style.css、portfolio.css、site-theme.css 与 site-dark.css。
 
 本地预览可在此目录运行python -m http.server 8788 --bind 127.0.0.1，打开http://127.0.0.1:8788/。公开目录只包含网站资源，不包含私人简历、联系方式表、完整报告或内部协作记录。
