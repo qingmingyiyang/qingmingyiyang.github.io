@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F5F1E8">
+<meta name="theme-color" content="#FFFFFF">
 <title>熊帝权｜个人主页</title>
-<meta name="description" content="熊帝权，武汉大学宏观质量管理专业2027届硕士研究生，重庆大学工商管理本科。这里是我的作品：调研长卷、战略分析、HR与AI应用。">
+<meta name="description" content="熊帝权，武汉大学宏观质量管理专业2027届硕士研究生，重庆大学工商管理本科。这里是我的作品：调研长卷、战略分析、HR经验与AI应用。">
 <meta property="og:title" content="熊帝权｜个人主页">
-<meta property="og:description" content="熊帝权，武汉大学宏观质量管理专业2027届硕士研究生，重庆大学工商管理本科。这里是我的作品：调研长卷、战略分析、HR与AI应用。">
+<meta property="og:description" content="熊帝权，武汉大学宏观质量管理专业2027届硕士研究生，重庆大学工商管理本科。这里是我的作品：调研长卷、战略分析、HR经验与AI应用。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://qingmingyiyang.github.io/">
 <link rel="canonical" href="https://qingmingyiyang.github.io/">
@@ -17,13 +17,17 @@
   @font-face { font-family: "Book Serif"; src: url("assets/book/fonts/book-serif-regular.woff") format("woff"); font-weight: 400 500; font-display: swap; }
   @font-face { font-family: "Book Serif"; src: url("assets/book/fonts/book-serif-bold.woff") format("woff"); font-weight: 600 900; font-display: swap; }
   :root {
-    --paper: #F5F1E8;
-    --ink: #1B1815;
-    --ink-soft: #3A332D;
-    --muted: #6E655C;
-    --dan: rgba(70, 60, 50, .2);
-    --dan-text: rgba(60, 52, 44, .45);
+    --paper: #FFFFFF;
+    --ink: #1C1F21;
+    --ink-soft: #363D40;
+    --muted: #687174;
+    --dan: rgba(40, 60, 66, .18);
+    --dan-text: rgba(40, 52, 56, .45);
     --zhu: #B8392B;
+    /* 千里江山图色卡：赭石、石青、石绿、青碧，每章一色；晕染用同色系更亮的颜料色，朱砂只留给封面与印章 */
+    --zhe: #8E5F37; --qing: #2B5A80; --lv: #42785A; --bi: #2C7279;
+    --w-zhe: 201, 145, 90; --w-qing: 62, 127, 184; --w-lv: 78, 156, 120; --w-bi: 59, 150, 155; --w-huang: 217, 179, 106;
+    --c: var(--bi);
     --serif: "Book Serif", "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   }
   * { box-sizing: border-box; }
@@ -34,8 +38,8 @@
   .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 9; }
   .skip:focus { left: 8px; }
   .more { margin: 18px 0 0 72px; font-size: 17px; letter-spacing: .04em; color: var(--muted); }
-  .more a { color: var(--ink); text-decoration-color: var(--zhu); text-underline-offset: 5px; }
-  a:focus-visible, .scroll:focus-visible { outline: 2px solid var(--zhu); outline-offset: 4px; }
+  .more a { color: var(--ink); text-decoration-color: var(--c); text-underline-offset: 5px; }
+  a:focus-visible, .scroll:focus-visible { outline: 2px solid var(--c); outline-offset: 4px; }
 
   /* ---------- 书封 ---------- */
   .cover { position: relative; min-height: max(100vh, 720px); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; }
@@ -44,7 +48,7 @@
   .cover .sun { position: absolute; right: 13%; top: 15%; width: 64px; height: 64px; border-radius: 50%; background: #F2C98E; opacity: .5; pointer-events: none; }
   .cover nav { position: relative; z-index: 2; display: flex; justify-content: flex-end; gap: 30px; padding: 26px 48px 0; font-size: 16px; letter-spacing: .18em; color: var(--muted); }
   .cover nav a { text-decoration: none; white-space: nowrap; }
-  .cover nav a:hover { color: var(--zhu); }
+  .cover nav a:hover { color: var(--c); }
   .face { position: relative; z-index: 1; align-self: center; text-align: center; padding: 0 24px 22vh; }
   .face h1 { margin: 0; line-height: 0; }
   .face h1 img { width: clamp(300px, 44vw, 640px); height: auto; }
@@ -55,13 +59,13 @@
   .face .pitch { margin: 26px 0 0; font: 500 clamp(18px, 1.55vw, 22px)/1.7 var(--serif); letter-spacing: .14em; color: var(--ink); }
   .face .proof { margin: 6px auto 0; max-width: 52em; font-size: 15px; line-height: 1.7; letter-spacing: .06em; color: var(--muted); }
   .face .proof i { font-style: normal; color: var(--zhu); margin: 0 .7em; }
-  .badge { position: relative; width: 44px; height: 44px; border-radius: 50%; border: 1.4px solid var(--zhu); background: var(--paper); color: var(--zhu); display: grid; place-items: center; font: 600 17px/1 var(--serif); }
+  .badge { position: relative; width: 44px; height: 44px; border-radius: 50%; border: 1.4px solid var(--c); background: var(--paper); color: var(--c); display: grid; place-items: center; font: 600 17px/1 var(--serif); }
   .tikuan { position: absolute; z-index: 1; right: 33%; bottom: 12%; margin: 0; writing-mode: vertical-rl; height: 10.6em; font: 500 12.5px/1.3 var(--serif); letter-spacing: .12em; color: var(--dan-text); }
-  .tikuan b { font-weight: 700; color: rgba(60, 52, 44, .6); }
+  .tikuan b { font-weight: 700; color: rgba(40, 52, 56, .6); }
   .tikuan b, .tikuan span { display: block; }
   .tikuan span { margin-top: 2.4em; }
   .tikuan em { font-style: normal; -webkit-text-emphasis: open circle var(--zhu); text-emphasis: open circle var(--zhu); }
-  .foot { position: relative; z-index: 1; text-align: center; padding: 0 24px 28px; font-size: 15.5px; letter-spacing: .3em; color: rgba(50, 44, 38, .62); }
+  .foot { position: relative; z-index: 1; text-align: center; padding: 0 24px 28px; font-size: 15.5px; letter-spacing: .3em; color: rgba(36, 46, 50, .62); }
   .foot i { font-style: normal; color: var(--zhu); margin: 0 .3em; letter-spacing: 0; }
   .foot span { white-space: nowrap; }
 
@@ -71,74 +75,111 @@
   .juan-head p, .vol-head .meta { margin: 10px 0 0; font-size: 17px; letter-spacing: .14em; color: var(--muted); }
   .scroll { overflow-x: auto; direction: rtl; scrollbar-width: thin; scrollbar-color: var(--dan) transparent; }
   .track { display: flex; align-items: flex-end; width: max-content; min-width: 100%; padding: 10px 64px 54px; position: relative; }
-  .track::after { content: ""; position: absolute; left: 0; right: 0; bottom: 30px; height: 1.2px; background: var(--zhu); opacity: .55; }
+  .track::after { content: ""; position: absolute; left: 0; right: 0; bottom: 30px; height: 1.2px; background: var(--c); opacity: .55; }
   .scene { direction: ltr; margin-left: 72px; display: flex; flex-direction: column; align-items: center; position: relative; }
   .scene:last-child { margin-left: 0; }
-  .scene::after { content: ""; position: absolute; bottom: -30px; width: 11px; height: 11px; border-radius: 50%; border: 1.3px solid var(--zhu); background: var(--paper); transform: translateY(50%); z-index: 1; }
+  .scene::after { content: ""; position: absolute; bottom: -30px; width: 11px; height: 11px; border-radius: 50%; border: 1.3px solid var(--c); background: var(--paper); transform: translateY(50%); z-index: 1; }
   .scene img, .scene svg { display: block; height: 240px; width: auto; }
   .scene img { outline: 1px solid var(--dan); outline-offset: 5px; }
   .scene img.tall { height: 280px; }
   .scene p { margin: 16px 0 0; text-align: center; font-size: 15.5px; line-height: 1.6; letter-spacing: .08em; color: var(--muted); }
   .scene p b { display: block; font-size: 18px; color: var(--ink); letter-spacing: .2em; font-weight: 700; }
   .juan-note { max-width: 1180px; margin: 0 auto; padding: 14px 48px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 15.5px; letter-spacing: .1em; color: var(--muted); }
-  .juan-note button { font: 15.5px/1 var(--serif); letter-spacing: .14em; color: var(--ink-soft); background: none; border: 0; padding: 4px 0; margin-left: 22px; cursor: pointer; border-bottom: 1px solid var(--zhu); }
+  .juan-note button { font: 15.5px/1 var(--serif); letter-spacing: .14em; color: var(--ink-soft); background: none; border: 0; padding: 4px 0; margin-left: 22px; cursor: pointer; border-bottom: 1px solid var(--c); }
   .no-js .juan-note .btns { display: none; }
 
   /* ---------- 目录 ---------- */
-  .mulu { max-width: 1000px; margin: 0 auto; padding: 120px 24px 40px; }
+  .mulu { padding: 120px max(24px, calc(50% - 476px)) 40px; }
   .mulu h2 { margin: 0 0 44px; text-align: center; line-height: 0; }
   .mulu h2 img { width: clamp(150px, 16vw, 220px); height: auto; }
   .mulu ol { list-style: none; margin: 0; padding: 0; }
   .mulu li a { display: grid; grid-template-columns: 64px auto minmax(40px, 1fr) auto; align-items: center; column-gap: 18px; padding: 22px 0; text-decoration: none; }
   .mulu li + li a { border-top: 1px solid var(--dan); }
-  .mulu .num { width: 48px; height: 48px; border-radius: 50%; border: 1.4px solid var(--zhu); color: var(--zhu); display: grid; place-items: center; font: 700 20px/1 var(--serif); }
+  .mulu .num { width: 48px; height: 48px; border-radius: 50%; border: 1.4px solid var(--c); color: var(--c); display: grid; place-items: center; font: 700 20px/1 var(--serif); }
   .mulu .t { font: 700 29px/1.3 var(--serif); letter-spacing: .2em; white-space: nowrap; }
-  .mulu .leader { border-bottom: 1.5px dotted rgba(70, 60, 50, .35); transform: translateY(6px); }
+  .mulu .leader { border-bottom: 1.5px dotted rgba(40, 60, 66, .35); transform: translateY(6px); }
   .mulu .d { font-size: 17.5px; letter-spacing: .06em; color: var(--ink); text-align: right; line-height: 1.6; }
   .mulu .d span, .mulu .d small { display: block; text-wrap: pretty; }
   .mulu .d small { font-size: 15.5px; color: var(--muted); }
-  .mulu a:hover .t { color: var(--zhu); }
+  .mulu a:hover .t { color: var(--c); }
+  .mulu li:nth-child(1) { --c: var(--zhe); }
+  .mulu li:nth-child(2) { --c: var(--qing); }
+  .mulu li:nth-child(3) { --c: var(--lv); }
+  .mulu li:nth-child(4) { --c: var(--bi); }
+
+  /* ---------- 能解决的问题 ---------- */
+  .jie { position: relative; isolation: isolate; padding: 120px max(24px, calc(50% - 530px)) 96px; }
+  .jie::before { content: ""; position: absolute; inset: 30% 0 0; z-index: -1; background: linear-gradient(90deg, rgba(var(--w-qing), .2), rgba(var(--w-lv), .2) 50%, rgba(var(--w-bi), .2)); -webkit-mask-image: linear-gradient(180deg, transparent, #000 62%, transparent); mask-image: linear-gradient(180deg, transparent, #000 62%, transparent); }
+  .jie > h2 { margin: 0; text-align: center; font: 700 clamp(28px, 2.6vw, 38px)/1.4 var(--serif); letter-spacing: .3em; padding-left: .3em; }
+  .jie > .meta { margin: 10px 0 0; text-align: center; font-size: 17px; letter-spacing: .14em; color: var(--muted); }
+  .jie-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px; margin-top: 56px; }
+  .jie article { position: relative; padding-top: 22px; }
+  .jie article::before { content: ""; position: absolute; left: 0; top: 0; width: 34px; height: 2px; background: var(--c); }
+  .jie article + article::after { content: ""; position: absolute; left: -24px; top: 0; bottom: 0; width: 1px; background: var(--dan); }
+  .jie .type { margin: 0; font: 700 16px/1.5 var(--serif); letter-spacing: .2em; color: var(--c); }
+  .jie h3 { margin: 12px 0 0; padding-bottom: 18px; border-bottom: 1px solid var(--dan); font: 700 21px/1.6 var(--serif); letter-spacing: .04em; }
+  .jie article p { margin: 16px 0 0; font-size: 17.5px; line-height: 1.9; color: var(--ink-soft); }
+  .jie .eg b { color: var(--c); margin-right: .6em; }
+  .jie .ref { font-size: 15.5px; letter-spacing: .06em; color: var(--muted); }
+  .jie .ref a { margin-right: 1.2em; text-decoration-color: var(--c); text-underline-offset: 5px; }
 
   /* ---------- 正文 ---------- */
-  .vol { max-width: 980px; margin: 0 auto; padding: 120px 24px 20px; }
+  .vol { padding: 120px max(24px, calc(50% - 466px)) 20px; }
   .vol-head { text-align: center; margin-bottom: 40px; }
   .vol-head .badge { margin: 0 auto 18px; width: 56px; height: 56px; font-size: 22px; font-weight: 700; }
-  .case { margin: 0 0 46px; padding: 24px 0 28px; border-top: 1.4px solid var(--zhu); border-bottom: 1px solid var(--dan); }
-  .case h3 { margin: 0 0 10px; font: 700 23px/1.5 var(--serif); letter-spacing: .08em; color: var(--zhu); }
+  .vol-head .claim { margin: 14px 0 0; font: 700 clamp(18px, 1.6vw, 21px)/1.6 var(--serif); letter-spacing: .14em; color: var(--c); }
+
+  /* 每章一色：往下滑，本章颜色在章首最深，越往下越浅、越亮，章与章交界处已淡到白，不会突然换色 */
+  #ch-1 { --c: var(--zhe); --w: var(--w-zhe); --w2: var(--w-huang); }
+  #ch-2 { --c: var(--qing); --w: var(--w-qing); --w2: var(--w-bi); }
+  #ch-3 { --c: var(--lv); --w: var(--w-lv); --w2: var(--w-bi); }
+  #ch-4 { --c: var(--bi); --w: var(--w-bi); --w2: var(--w-qing); }
+  #ch-1, .vol {
+    background:
+      radial-gradient(ellipse 60% 320px at 50% 170px, rgba(var(--w), .14), rgba(var(--w), 0) 70%),
+      linear-gradient(180deg, rgba(var(--w), 0) 0, rgba(var(--w), .2) 210px, rgba(var(--w), .1) 34%, rgba(var(--w2), .05) 70%, rgba(var(--w2), 0) 100%);
+  }
+  .case { margin: 0 0 46px; padding: 24px 0 28px; border-top: 1.4px solid var(--c); border-bottom: 1px solid var(--dan); }
+  .case h3 { margin: 0 0 10px; font: 700 23px/1.5 var(--serif); letter-spacing: .08em; color: var(--c); }
   .case p { margin: 0; color: var(--ink-soft); }
   .lead { margin: 0 0 34px; color: var(--ink-soft); }
   .entries { list-style: none; margin: 0; padding: 0; position: relative; }
-  .entries.seq::before { content: ""; position: absolute; left: 22px; top: 18px; bottom: 30px; width: 1.2px; background: var(--zhu); opacity: .45; }
+  .entries.seq::before { content: ""; position: absolute; left: 22px; top: 18px; bottom: 30px; width: 1.2px; background: var(--c); opacity: .45; }
   .entries li { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 28px; padding: 0 0 30px; position: relative; }
   .marks { display: flex; justify-content: center; }
   .marks .badge { width: 40px; height: 40px; font: 600 18px/1 "Noto Serif SC", Georgia, serif; }
-  .marks .dot { width: 9px; height: 9px; margin-top: 12px; border-radius: 50%; background: var(--zhu); opacity: .8; }
+  .marks .dot { width: 9px; height: 9px; margin-top: 12px; border-radius: 50%; background: var(--c); opacity: .8; }
   .entries h3 { margin: 2px 0 6px; font: 700 22px/1.5 var(--serif); letter-spacing: .08em; }
   .entries h3 small { font: 400 15.5px/1 var(--serif); color: var(--muted); margin-left: 10px; letter-spacing: .04em; }
   .entries p { margin: 0; font-size: 18.5px; line-height: 1.95; color: var(--ink-soft); }
-  .entries a { text-decoration-color: var(--zhu); text-underline-offset: 5px; }
+  .entries a { text-decoration-color: var(--c); text-underline-offset: 5px; }
   .aside { margin: 6px 0 0 72px; font-size: 17.5px; line-height: 1.9; color: var(--ink-soft); }
   .plate { margin: 10px 0 34px 72px; }
   .plate svg { display: block; width: 100%; max-width: 420px; height: auto; }
   .plate figcaption { margin-top: 8px; font-size: 16px; letter-spacing: .1em; color: var(--muted); }
 
   /* ---------- 题跋 ---------- */
-  .tiba { max-width: 980px; margin: 0 auto; padding: 110px 24px 110px; display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 48px; align-items: end; }
+  .tiba { position: relative; isolation: isolate; padding: 110px max(24px, calc(50% - 466px)) 110px; display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 48px; align-items: end; }
   .tiba img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 30%; outline: 1px solid var(--dan); outline-offset: 6px; }
   .tiba .l1 { margin: 0; font: 700 29px/1.7 var(--serif); letter-spacing: .1em; }
   .tiba .l2 { margin: 4px 0 0; font-size: 19px; color: var(--ink-soft); letter-spacing: .06em; }
   .tiba .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 28px; }
-  .tiba .cta a { font: 700 17.5px/1.4 var(--serif); letter-spacing: .14em; text-decoration: none; border-bottom: 1.5px solid var(--zhu); padding-bottom: 3px; }
+  .tiba .cta a { font: 700 17.5px/1.4 var(--serif); letter-spacing: .14em; text-decoration: none; border-bottom: 1.5px solid var(--c); padding-bottom: 3px; }
   .seal { display: inline-grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; grid-auto-flow: column; direction: rtl; width: 52px; height: 52px; padding: 4px; background: var(--zhu); color: #F6ECE2; font: 700 15px/1 var(--serif); border-radius: 3px; }
   .seal span { display: grid; place-items: center; }
+  .tiba::before { content: ""; position: absolute; inset: 30% 0 0; z-index: -1; background: linear-gradient(90deg, rgba(var(--w-zhe), .16), rgba(var(--w-lv), .16) 36%, rgba(var(--w-qing), .16) 66%, rgba(var(--w-bi), .16)); -webkit-mask-image: linear-gradient(180deg, transparent, #000); mask-image: linear-gradient(180deg, transparent, #000); }
 
   @media (max-width: 900px) {
     .cover .corner { width: 300px; left: -80px; top: -30px; }
     .tikuan { right: 6%; }
   }
+  @media (max-width: 860px) {
+    .jie-cols { grid-template-columns: 1fr; row-gap: 44px; }
+    .jie article + article::after { display: none; }
+  }
   @media (max-width: 700px) {
     .cover { min-height: 100svh; display: block; }
-    .cover nav { justify-content: center; flex-wrap: wrap; gap: 4px 18px; padding: 18px 12px 0; letter-spacing: .08em; font-size: 14.5px; }
+    .cover nav { justify-content: center; flex-wrap: wrap; gap: 4px 12px; padding: 18px 10px 0; letter-spacing: .04em; font-size: 14.5px; }
     .cover .land { height: 46%; }
     .cover .sun { right: auto; left: 18%; top: 30%; width: 46px; height: 46px; }
     .cover .corner { width: 190px; left: -70px; right: auto; top: 44px; }
@@ -163,6 +204,7 @@
     .entries li { column-gap: 16px; }
     .aside, .plate, .more { margin-left: 52px; }
     .mulu { padding-top: 80px; }
+    .jie { padding-top: 80px; }
     .mulu li a { grid-template-columns: 52px minmax(0, 1fr); row-gap: 6px; }
     .mulu .leader { display: none; }
     .mulu .t { font-size: 23px; letter-spacing: .12em; }
@@ -186,11 +228,11 @@
   <span class="sun" aria-hidden="true"></span>
   <img class="land" src="assets/book/landscape-hero.svg" alt="">
   <svg class="corner" viewBox="0 0 378 248" aria-hidden="true">
-    <rect x="14" y="14" width="350" height="220" fill="none" stroke="rgba(70,60,50,.28)" stroke-width="1.4"/>
-    <path d="M20 20 V228 M46 20 V228 M72 20 V228 M98 20 V228 M124 20 V228 M150 20 V228 M176 20 V228 M202 20 V228 M228 20 V228 M254 20 V228 M280 20 V228 M306 20 V228 M332 20 V228 M358 20 V228 M20 20 H358 M20 46 H358 M20 72 H358 M20 98 H358 M20 124 H358 M20 150 H358 M20 176 H358 M20 202 H358 M20 228 H358" fill="none" stroke="rgba(70,60,50,.2)" stroke-width="1"/>
+    <rect x="14" y="14" width="350" height="220" fill="none" stroke="rgba(40,60,66,.28)" stroke-width="1.4"/>
+    <path d="M20 20 V228 M46 20 V228 M72 20 V228 M98 20 V228 M124 20 V228 M150 20 V228 M176 20 V228 M202 20 V228 M228 20 V228 M254 20 V228 M280 20 V228 M306 20 V228 M332 20 V228 M358 20 V228 M20 20 H358 M20 46 H358 M20 72 H358 M20 98 H358 M20 124 H358 M20 150 H358 M20 176 H358 M20 202 H358 M20 228 H358" fill="none" stroke="rgba(40,60,66,.2)" stroke-width="1"/>
     <circle cx="267.0" cy="111.0" r="7" fill="none" stroke="#B8392B" stroke-width="1.3" opacity=".85"/>
   </svg>
-  <nav aria-label="主导航"><a href="#mulu">目录</a><a href="#ch-2">战略分析</a><a href="#ch-3">HR</a><a href="#ch-4">AI应用</a><a href="notes.html">文章</a><a href="experience.html">完整经历</a></nav>
+  <nav aria-label="主导航"><a href="#mulu">目录</a><a href="#ch-2">战略分析</a><a href="#ch-3">HR经验</a><a href="#ch-4">AI应用</a><a href="notes.html">文章</a><a href="experience.html">完整经历</a></nav>
 
   <div class="face">
     <h1 id="name-h"><picture><source media="(max-width: 700px)" srcset="assets/book/title-brush-v.png"><img src="assets/book/title-brush.png" alt="熊帝权" width="723" height="231"></picture></h1>
@@ -204,12 +246,40 @@
 </header>
 
 <main id="main">
+  <section class="jie" id="jie" aria-labelledby="jie-h">
+    <h2 id="jie-h">我能解决的三类问题</h2>
+    <p class="meta">按求职方向分，每类附一个做过的例子</p>
+    <div class="jie-cols">
+      <article style="--c: var(--qing)">
+        <p class="type">战略分析</p>
+        <h3>通过实地调研，<br>确定品牌的发展方向</h3>
+        <p>先去产区和交易市场看现场、做访谈，再对照全国品牌，找出本地的特色和短板，提出品牌往哪走、对消费者说什么。</p>
+        <p class="eg"><b>例</b>汉川河蟹缺的不是分级，是市场认的品牌。方案对标阳澄湖，这项品牌设计<strong>获汉川市委市政府采纳</strong>。</p>
+        <p class="ref">见 <a href="#ch-1">壹 调研长卷</a><a href="#ch-2">贰 战略分析</a></p>
+      </article>
+      <article style="--c: var(--lv)">
+        <p class="type">HR</p>
+        <h3>通过AI工具和HR经验，<br>为招聘赋能</h3>
+        <p>先跟业务问清楚要什么人，再打磨JD、筛选、分档和跟踪。接手积压的简历，<strong>半个月清完</strong>，之后新简历当天看完。</p>
+        <p class="eg"><b>例</b>JD一改，旧的匹配结论难回查，我和AI做了个招聘工作台；考核出题工具用了<strong>100多次</strong>。</p>
+        <p class="ref">见 <a href="#ch-3">叁 HR经验</a><a href="#ch-4">肆 AI应用</a></p>
+      </article>
+      <article style="--c: var(--bi)">
+        <p class="type">AI应用</p>
+        <h3>把个人经验沉淀成<br>可重复使用的工具和标准化流程</h3>
+        <p>把工作里反复用到的做法写成规则，再和AI一起做成工具或流程：下次不用从头来，别人也能照着用。</p>
+        <p class="eg"><b>例</b>品牌调研的做法写成了AI能照着跑的流程；做了积微，让AI记住已经确认的资料，后面只补新的。</p>
+        <p class="ref">见 <a href="#ch-4">肆 AI应用</a></p>
+      </article>
+    </div>
+  </section>
+
   <section class="mulu" id="mulu" aria-labelledby="mulu-h">
     <h2 id="mulu-h"><img src="assets/book/title-mulu.png" alt="目录" width="390" height="140"></h2>
     <ol>
       <li><a href="#ch-1"><span class="num">壹</span><span class="t">调研长卷</span><span class="leader" aria-hidden="true"></span><span class="d"><span>在产区和交易市场跑了160多天</span><small>判断先到现场对一遍</small></span></a></li>
       <li><a href="#ch-2"><span class="num">贰</span><span class="t">战略分析</span><span class="leader" aria-hidden="true"></span><span class="d"><span>汈汊湖满膏蟹品牌设计获汉川采纳，已有企业印上包装</span><small>8个品牌项目，主导5个</small></span></a></li>
-      <li><a href="#ch-3"><span class="num">叁</span><span class="t">HR</span><span class="leader" aria-hidden="true"></span><span class="d"><span>半个月清完积压简历，新简历当天看完</span><small>5个招聘方向，先问清业务要什么人</small></span></a></li>
+      <li><a href="#ch-3"><span class="num">叁</span><span class="t">HR经验</span><span class="leader" aria-hidden="true"></span><span class="d"><span>半个月清完积压简历，新简历当天看完</span><small>5个招聘方向，先问清业务要什么人</small></span></a></li>
       <li><a href="#ch-4"><span class="num">肆</span><span class="t">AI应用</span><span class="leader" aria-hidden="true"></span><span class="d"><span>出题工具用了100多次，给200多名学生出过考核题</span><small>规则我定，代码交给AI</small></span></a></li>
     </ol>
   </section>
@@ -218,6 +288,7 @@
     <div class="juan-head vol-head">
       <span class="badge">壹</span>
       <h2 id="juan-h">调研长卷</h2>
+      <p class="claim">先去现场看，再下判断</p>
       <p class="meta">实地调研160+天，覆盖14个省或直辖市、23个城市</p>
     </div>
     <div class="scroll" tabindex="0" aria-label="长卷，可横向滚动">
@@ -238,6 +309,7 @@
     <div class="vol-head">
       <span class="badge">贰</span>
       <h2 id="v2-h">战略分析</h2>
+      <p class="claim">通过实地调研，确定品牌的发展方向</p>
       <p class="meta">区域公用品牌与产业研究（战略咨询）　学生负责人　2024.10至今</p>
     </div>
     <div class="case">
@@ -258,8 +330,9 @@
   <section class="vol" id="ch-3" aria-labelledby="v3-h">
     <div class="vol-head">
       <span class="badge">叁</span>
-      <h2 id="v3-h">HR</h2>
-      <p class="meta">腾讯科技（深圳）有限公司　AI for HR实习生（CSIG）　2026.07–2026.09</p>
+      <h2 id="v3-h">HR经验</h2>
+      <p class="claim">通过AI工具和HR经验，为招聘赋能</p>
+      <p class="meta">腾讯 AI for HR 实习（CSIG）　2026.07–2026.09；蔚来 HR 实习　2023.11–2024.03</p>
     </div>
     <ol class="entries seq">
       <li><span class="marks"><span class="badge">1</span></span><div><h3>需求</h3><p>对接京沪深云业务售前架构师、大客户销售、生态拓展、渠道拓展等<strong>5个招聘方向</strong>，<strong>先把业务要什么人问清楚</strong>，再打磨JD。</p></div></li>
@@ -271,12 +344,12 @@
             <path d="M8 44 Q60 32 210 24 Q360 32 412 44 L398 56 L22 56 Z"/>
             <path d="M22 56 H398 M22 64 H398"/>
             <path d="M44 64 V258 M54 64 V258 M366 64 V258 M376 64 V258"/>
-            <g style="stroke:rgba(70,60,50,.45);stroke-width:.9"><path d="M74 74 H346 M74 84 H346 M74 94 H346 M74 104 H346"/><path d="M74 74 V104 M96 74 V104 M118 74 V104 M140 74 V104 M162 74 V104 M184 74 V104 M206 74 V104 M228 74 V104 M250 74 V104 M272 74 V104 M294 74 V104 M316 74 V104 M346 74 V104"/></g>
+            <g style="stroke:rgba(40,60,66,.45);stroke-width:.9"><path d="M74 74 H346 M74 84 H346 M74 94 H346 M74 104 H346"/><path d="M74 74 V104 M96 74 V104 M118 74 V104 M140 74 V104 M162 74 V104 M184 74 V104 M206 74 V104 M228 74 V104 M250 74 V104 M272 74 V104 M294 74 V104 M316 74 V104 M346 74 V104"/></g>
             <path d="M16 258 H404 M16 266 H404"/>
             <path d="M104 172 H316 V182 H104 Z M114 182 V250 M306 182 V250 M114 228 H306"/>
             <g><path d="M124 154 H164 V172 H124 Z M126 158 H162 M126 163 H162 M126 168 H162"/><path d="M182 158 H222 V172 H182 Z M184 162 H220 M184 167 H220"/><path d="M240 162 H280 V172 H240 Z M242 167 H278"/></g>
             <g style="fill:#1B1815;stroke:none;font:13px var(--serif);text-anchor:middle"><text x="144" y="148">A</text><text x="202" y="152">B</text><text x="260" y="156">C</text></g>
-            <circle cx="152" cy="144" r="3" style="fill:#B8392B;stroke:none"/>
+            <circle cx="152" cy="144" r="3" style="fill:#42785A;stroke:none"/>
             <path d="M288 130 L314 126 L318 168 L292 172 Z M294 138 L312 135 M295 146 L313 143 M296 154 L314 151"/>
           </svg>
       <figcaption>招聘案头：分档清单与考核题卡</figcaption>
@@ -289,7 +362,8 @@
     <div class="vol-head">
       <span class="badge">肆</span>
       <h2 id="v4-h">AI应用</h2>
-      <p class="meta">在招聘与研究里，和AI协作把方法做成工具</p>
+      <p class="claim">把个人经验沉淀成可重复使用的工具和标准化流程</p>
+      <p class="meta">考核出题工具 · 招聘工作台 · 积微 · brand-strategy-analysis</p>
     </div>
     <ul class="entries par">
       <li><span class="marks"><span class="dot"></span></span><div><h3>考核出题工具<small>腾讯</small></h3><p>前后用了<strong>100多次</strong>，给<strong>200多名</strong>销售培训生的转正考核出过<strong>107道题</strong>。起因是固定题怕被摸熟，随口问又太散，所以做了<strong>明暗题卡</strong>：学生看到行业背景和任务；面试官还能看到客户的隐藏条件和追问提示，比如客户刚出过安全事件，看学生会不会主动问。规则我定，代码主要让AI写。第一版权限一刀切，我和同事试用后都觉得不好调，就拆成了项目组、面试官、学生三种。</p></div></li>
@@ -310,7 +384,7 @@
               <text x="80" y="198">调研</text><text x="144" y="198">诊断</text><text x="208" y="198">竞争</text><text x="272" y="198">价值</text><text x="336" y="198">方案</text>
               <text x="210" y="249" style="font-size:13px">基本单元　输入　步骤　输出　检查标准</text>
             </g>
-            <circle cx="232" cy="105" r="3" style="fill:#B8392B;stroke:none"/>
+            <circle cx="232" cy="105" r="3" style="fill:#2C7279;stroke:none"/>
           </svg>
       <figcaption>方法楼阁：品牌战略分析工作流的结构</figcaption>
     </figure>
