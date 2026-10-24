@@ -198,7 +198,7 @@ $('close-lightbox').addEventListener('click', () => $('lightbox').close());
 $('lightbox').addEventListener('close', () => { stopVideos($('lightbox-media')); $('lightbox-media').replaceChildren(); renderMedia(); });
 $('lightbox').addEventListener('keydown', event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); moveMedia(event.key === 'ArrowLeft' ? -1 : 1); } });
 $('prev-media').addEventListener('click', () => moveMedia(-1)); $('next-media').addEventListener('click', () => moveMedia(1));
-$('theme').addEventListener('click', () => { const dark = document.documentElement.dataset.theme !== 'dark'; document.documentElement.dataset.theme = dark ? 'dark' : 'light'; $('theme').setAttribute('aria-pressed', String(dark)); $('theme').setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式'); $('theme').textContent = dark ? '白天模式 ◑' : '夜晚模式 ◐'; });
+$('theme')?.addEventListener('click', () => { const dark = document.documentElement.dataset.theme !== 'dark'; document.documentElement.dataset.theme = dark ? 'dark' : 'light'; $('theme').setAttribute('aria-pressed', String(dark)); $('theme').setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式'); $('theme').textContent = dark ? '白天模式 ◑' : '夜晚模式 ◐'; });
 window.addEventListener('beforeunload', event => { if (dirty || busy) { event.preventDefault(); event.returnValue = ''; } });
 render(); openStorage();
 // Only a measured size is shared by the read-only preview; no album data is sent.
