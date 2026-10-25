@@ -127,7 +127,7 @@
   .vol { padding: 120px max(24px, calc(50% - 466px)) 20px; }
   .vol-head { text-align: center; margin-bottom: 40px; }
   .vol-head .badge { margin: 0 auto 18px; width: 56px; height: 56px; font-size: 22px; font-weight: 700; }
-  .vol-head .logos { display: flex; justify-content: center; align-items: center; gap: 36px; margin: 20px 0 0; }
+  .vol-head .logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 72px; margin: 20px 0 0; }
   .vol-head .logos img { display: block; width: auto; height: 22px; }
   .vol-head .logos img.nio { height: 27px; }
   .vol-head .claim { margin: 14px 0 0; font: 700 clamp(18px, 1.6vw, 21px)/1.6 var(--serif); letter-spacing: .14em; color: var(--c); }
@@ -213,6 +213,7 @@
     .vol { padding-top: 90px; }
     .entries li { column-gap: 16px; }
     .aside, .plate, .more { margin-left: 52px; }
+    .vol-head .logos { column-gap: 48px; }
     .mulu { padding-top: 80px; }
     .jie { padding-top: 80px; }
     .mulu li a { grid-template-columns: 52px minmax(0, 1fr); row-gap: 6px; }
@@ -228,6 +229,9 @@
     .cover nav { gap: 2px 12px; font-size: 13.5px; letter-spacing: 0; }
     .cover .corner { display: none; }
     .cover .sun { left: 8%; top: 54%; }
+    .vol-head .logos { column-gap: 28px; }
+    .vol-head .logos img { height: 19px; }
+    .vol-head .logos img.nio { height: 24px; }
   }
 </style>
 </head>
@@ -337,7 +341,7 @@
     <ul class="entries par">
       <li><span class="marks"><span class="dot"></span></span><div><h3>考核出题工具<small>腾讯</small></h3><p>前后用了<strong>100多次</strong>，给<strong>200多名</strong>销售培训生的转正考核出过<strong>107道题</strong>。起因是固定题怕被摸熟，随口问又太散，所以做了<strong>明暗题卡</strong>：学生看到行业背景和任务；面试官还能看到客户的隐藏条件和追问提示，比如客户刚出过安全事件，看学生会不会主动问。规则我定，代码主要让AI写。第一版权限一刀切，我和同事试用后都觉得不好调，就拆成了项目组、面试官、学生三种。</p></div></li>
       <li><span class="marks"><span class="dot"></span></span><div><h3>招聘工作台原型<small>腾讯</small></h3><p>JD一改，之前的匹配结论就难回查。和AI一起做了个工作台，把<strong>JD版本、匹配依据和沟通纪要</strong>连在一起，自己日常招聘在用。</p></div></li>
-      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/Incremind">Incremind · 积微</a><small>产品独立开发者 · 2026.06至今</small></h3><p>跟AI合作，每开一个新对话都要从头讲背景。积微替AI记住已经确认的资料，<strong>后面只补新的</strong>；每条资料都能查到从哪来。拿48道新题实测，一次修复把<strong>证据召回从2%提到66%</strong>，<strong>完全正确从1题到22题</strong>；代价是中位耗时从16秒变成92秒，下一步做“够用即答”。设计时读了谷歌的Titans论文，定下“只记增量”的原则；工作台、资料库、设置三个模块是和AI一起做的，自己日常在用。</p></div></li>
+      <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/Incremind">Incremind · 积微</a><small>产品独立开发者 · 2026.06至今</small></h3><p>跟AI合作，每开一个新对话都要从头讲背景。积微替AI记住已经确认的资料，<strong>后面只补新的</strong>；每条资料都能查到从哪来。设计时读了谷歌的Titans论文，定下“只记增量”的原则；工作台、资料库、设置三个模块是和AI一起做的，自己日常在用。</p></div></li>
       <li><span class="marks"><span class="dot"></span></span><div><h3><a href="https://github.com/qingmingyiyang/brand-strategy-analysis">brand-strategy-analysis</a><small>工作流独立开发者 · 2026.09至今</small></h3><p>我们调研过五常大米、阳澄湖大闸蟹等十几个有名的区域品牌，攒下一套做法。我把它写成<strong>AI能照着跑的流程</strong>：每一步要什么材料、做什么、交出什么、怎么检查，都写清楚了。想让没做过品牌研究的人，也能跟着走一遍。</p></div></li>
     </ul>
     <figure class="plate">
